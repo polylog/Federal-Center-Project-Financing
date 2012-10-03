@@ -1,0 +1,42 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+.warning-gl { background: @warning-bg;
+
+	P {
+	background: @warning-bg;
+	.box-sizing(border-box);
+	*display: inline;
+	text-align: left;
+	margin: 0 auto;
+	padding: (45 * @bem + 0em) 40px (34 * @bem + 0em) 80px;
+	position: relative; 
+	max-width: 840px;
+	width: auto;
+	*width: 840px;
+	*zoom: 1; }
+
+	EM {
+	.bg-img;
+	.ir;
+	margin-top: -15px;
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	height: 40px;
+	width: 40px; }
+}
+
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+.warning-gl P { *width: auto; }
+	
+}

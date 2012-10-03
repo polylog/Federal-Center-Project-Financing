@@ -1,0 +1,61 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*		Ad zurb responsive styles */
+
+TABLE {
+	background: transparent;
+	border: @brd;
+	border-collapse: collapse; 
+	border-spacing: 0;
+	empty-cells: show;
+	text-align: left;
+	margin: 2.25em auto;
+	table-layout: auto;
+	width: 100%;
+	*width: 97%; }
+
+CAPTION {
+	font-weight: bold;
+	text-align: left;
+	margin-top: 0;
+	padding: .75em 0; }
+
+TABLE .span1, TABLE .span2 /*etc*/ { 
+	float: none;
+	margin-left: 0; }
+
+THEAD, TABLE > TR:first-child, TR:hover TD, TR:hover TH { background: @c-th; }
+
+TR:nth-child(even) { background: @c-tr; }
+
+TD, TH {
+	border-right: @brd;
+	border-bottom: @brd;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: top;
+	padding: 11px 9px 12px; }
+
+TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBODY TR:last-child TD { padding-bottom: 11px; }
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+TABLE {
+	border-collapse: collapse;
+	margin: 1.875em auto; }
+
+CAPTION { padding: .625em 20px; }
+
+TD, TH { padding: 9px 9px 10px; }
+
+TABLE > TR:last-child TH, TABLE > TR:last-child TD, TBODY TR:last-child TH, TBODY TR:last-child TD { padding-bottom: 9px; }
+
+}

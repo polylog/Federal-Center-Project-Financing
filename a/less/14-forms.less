@@ -1,0 +1,540 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+FORM {
+	margin: 0;
+	padding: 0; }
+
+FIELDSET {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	*zoom: 1; }
+
+	LEGEND {
+		display: block;
+		border: 0;
+		font-weight: bold;
+		text-align: left;
+		margin-bottom: @baseline + 0em;
+		*margin-left: -7px;
+		padding: 0;
+		white-space: normal;
+		width: 100%; }
+
+/*	==================================================
+	Buttons container
+	==================================================	*/
+
+.f-actions {
+	margin-top: @baseline + 0em;
+	margin-bottom: @baseline + 0em;
+	padding: (@baseline + 0em) 0;
+	*zoom: 1; }
+
+.f-actions:before, .f-actions:after {
+	content: '';
+	display: table; }
+
+.f-actions:after { clear: both; }
+
+/*	==================================================
+	Labels and placeholders
+	==================================================	*/
+
+LABEL {
+	cursor: pointer;
+	display: block; 
+	
+	B {
+		display: inline; /* Show labels text on big screens */
+		font-weight: normal; }
+	}
+
+.f-lot LABEL { margin-top: @baseline + 0em; }
+	
+	.f-lot LABEL.first, .f-lot LABEL:first-child { margin-top: 0 ; }
+
+/*	We have to use few rules, because browsers ignore a rule with an unknown selector.
+	TODO — create variable — the same color is used for note, date etc */
+:-moz-placeholder { color: @c-input; }
+:-ms-input-placeholder { color: @c-input; }
+::-webkit-input-placeholder { color: @c-input; }
+
+/*	==================================================
+	Text inputs and textareas
+	==================================================	*/
+
+INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA {
+	background: @c-input;
+	border: @brd;
+	display: inline-block;
+	font-family: inherit;
+	margin: 0 0 .25em;
+	vertical-align: middle; }
+
+/*	INPUT[type="text"], - die6 */ INPUT.txt, .txt INPUT, TEXTAREA {
+	padding: 12px 7px;
+	outline: none; }
+
+INPUT, TEXTAREA {
+	.box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+	/*
+	TODO - Error ocurs on using transition mixin with 2 properties
+	.transition(border linear 0.2s, box-shadow linear 0.2s);
+	*/
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s; }
+
+/*	==================================================
+	Checkboxes, radiobuttons, input-images nad input-files
+	==================================================	*/
+
+.rb, .cbx { /* Labels-containers */
+	margin-bottom: .25em; /* Maybe it's need only for .f-lot */
+	padding-left: 18px;
+	position: relative;
+	*zoom: 1; }
+
+INPUT[type="checkbox"], INPUT[type="image"], INPUT[type="radio"] {
+	cursor: pointer;
+	*width: 13px;
+	*height: 13px; }
+
+/*	.rb INPUT[type="radio"], .cbx INPUT[type="checkbox"], - die6 */
+.rb INPUT, .cbx INPUT {
+	position: absolute;
+	top: @baseline/6 + 0em;
+	left: 0; }
+
+INPUT[type="radio"] { vertical-align: text-bottom; }
+
+FORM > DIV > .cbx:first-child, FORM > DIV > .rb:first-child { padding-top: 5px; }
+
+.rb.inline, .cbx.inline {
+	display: inline-block;
+	padding-top: 5px;
+	margin-bottom: 0;
+	vertical-align: middle; }
+
+.cbx.inline + .cbx.inline, .rb.inline + .rb.inline { margin-left: 10px; }
+
+INPUT[type="image"] {
+	.box-shadow(none);
+	border: 0; }
+
+INPUT[type="file"] {
+	background: initial;
+	border: initial;
+	.box-shadow(none);
+	padding: initial;
+	height: 28px;
+	width: auto; }
+
+/*	==================================================
+	Select
+	There are background, display, margin and vertical-align
+	rules in the INPUTs section
+	==================================================	*/
+
+SELECT {
+	background: @c-input;
+	line-height: 28px;
+	*margin-top: @baseline/6 + 0em; /* For IE6/7 add top margin to align SELECT with LABELs */
+	padding: 5px;
+	height: 28px; /* In IE7, the height of the SELECT element cannot be changed by height, only font-size */
+	width: 240px; }
+
+SELECT[multiple], SELECT[size] { height: auto; }
+
+/*	==================================================
+	Capthca
+	==================================================	*/
+
+#i-captcha {
+	float: left;
+	margin: 0 20px 0 0;
+	width: 44%; }
+
+/*	==================================================
+	Grouping
+	==================================================	*/
+
+FORM .group { margin-bottom: 9 * @bem + 0em; }
+
+LEGEND + .group {
+	margin-top: 18 * @bem + 0em;
+	-webkit-margin-top-collapse: separate; }
+
+.f .group {
+	margin-bottom: 18 * @bem + 0em;
+	*zoom: 1; }
+
+.f .group:before, .f .group:after {
+	content: '';
+	display: table; }
+
+.f .group:after { clear: both; }
+
+.f LABEL {
+	float: left;
+	width: 140px;
+	padding-top: 5 * @bem + 0em;
+	text-align: right; }
+
+.f .group DIV {
+	*display: inline-block;
+	margin-left: 160px;
+	*margin-left: 0;
+	*padding-left: 20px; }
+
+.f .group DIV:first-child {	*padding-left: 160px; }
+
+.f .f-actions { padding-left: 160px; }
+
+/*	==================================================
+	Standart (labels-on-left) and inline forms
+	==================================================	*/
+
+INPUT[type="search"], .i-search { margin-bottom: 0; }
+
+.f-inline LABEL { display: inline-block; }
+
+.f-inline INPUT, .f INPUT,
+.f-inline TEXTAREA, .f TEXTAREA,
+.f-inline SELECT, .f SELECT,
+.f-inline .help, .f .help
+/*, .f-inline .i-uneditable, .f .i-uneditable,
+.f-inline .i-append, .f .i-append,
+.f-inline .i-prepend, .f .i-prepend */ {
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	*zoom: 1; }
+	
+.f-inline .cbx, .f-inline .rb {
+	margin-bottom: 0;
+	vertical-align: middle; }
+	
+/*	.f-inline .cbx INPUT[type="checkbox"], .f-inline .rb INPUT[type="radio"] - die6 */
+.f-inline .cbx INPUT, .f-inline .rb INPUT  {
+	float: left;
+	margin-right: 3px;
+	margin-left: 0; }
+
+/*	==================================================
+	Search
+	==================================================	*/
+
+.doc-header FORM {
+  margin-bottom: 0;
+  .clearfix();
+  .btn, INPUT, SELECT {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  input[type="checkbox"] { margin-top: 3px; }
+}
+
+.f-search {
+	.box-sizing(border-box);
+	float: right;
+	padding: 13px 59px 0 0;
+	position: relative;
+	width: 32.6530612%;
+	*width: 32.5510204%;
+	*zoom: 1;
+
+	BUTTON {
+	.bg-img();
+	background-position: -350px 0;
+	.ir();
+	border: 0;
+	.border-radius(0);
+	.box-shadow(none);
+	display: block;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 13px;
+	right: 9px;
+	height: 30px;
+	width: 30px; }
+	}
+
+.i-search {
+	background: @c-input;
+	border: 1px solid #E8D1C8;
+	.box-shadow(inset 0 1px 4px rgba(24,1,1,.12), 0 1px 0 #F7EBE9);
+	.box-sizing(border-box);
+	display: block;
+	font-family: inherit;
+	margin: 0;
+	padding: 12px 7px 4px;
+	outline: none;
+	vertical-align: middle;
+	width: 100%; }
+
+.i-search:-moz-placeholder {
+	color: @c-nt;
+	font-family: @font-h1;
+	font-size: 10px;
+	text-transform: uppercase; }
+.i-search:focus:-moz-placeholder {
+	color: lighten(@c-nt, 20%);
+	-moz-transition: background-position 0.1s linear; }
+
+.i-search:-ms-input-placeholder {
+	color: @c-nt;
+	font-family: @font-h1;
+	font-size: 10px;
+	text-transform: uppercase; }
+.i-search:focus:-ms-input-placeholder {
+	color: lighten(@c-nt, 20%);
+	-ms-transition: background-position 0.1s linear; }
+
+.i-search::-webkit-input-placeholder {
+	color: @c-nt;
+	font-family: @font-h1;
+	font-size: 10px;
+	text-transform: uppercase; }
+.i-search:focus::-webkit-input-placeholder {
+	color: lighten(@c-nt, 20%);
+	-webkit-transition: color 0.1s linear; }
+
+/*	==================================================
+	Input states
+	==================================================	*/
+
+INPUT:focus, TEXTAREA:focus {
+	border-color: darken(@c-brd, 24%);
+	.box-shadow (inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6));
+	outline: 0;
+	outline: thin dotted \9; /* IE6-9	*/ }
+
+INPUT[type="file"]:focus, INPUT[type="radio"]:focus, INPUT[type="checkbox"]:focus, SELECT:focus {
+	.box-shadow(none);
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px; }
+
+INPUT[disabled], SELECT[disabled], TEXTAREA[disabled], INPUT[readonly], SELECT[readonly], TEXTAREA[readonly] {
+	background-color: #EEE;
+	border-color: #DDD;
+	cursor: default;
+	cursor: not-allowed; }
+
+INPUT[type="radio"][disabled], INPUT[type="checkbox"][disabled], INPUT[type="radio"][readonly],
+INPUT[type="checkbox"][readonly] { background-color: transparent; }
+
+INPUT[type="hidden"] { display: none; }
+
+/*	==================================================
+	Alerts
+	==================================================	*/
+
+/*	.error .help-block, */ .error .help, .error INPUT,
+/*	.error .i-append .add-on, .error .i-prepend .add-on, */ 
+.error > LABEL, .error SELECT, .error TEXTAREA   {
+	color: @error-txt; }
+	
+.error INPUT, /*	.error .i-append .add-on, .error .i-prepend .add-on, */ .error SELECT, .error TEXTAREA {
+	/* TODO — Create variable */
+	border-color: @error-brd; }
+	
+.error INPUT:focus, .error SELECT:focus, .error TEXTAREA:focus {
+	border-color: lighten(@error-brd, 20%);
+	/* TODO — Check variable in bootstrap and create color variable for shade based on error colors */
+	.box-shadow(0 0 6px #D59392); }
+
+INPUT:invalid, TEXTAREA:invalid { background: @warning-bg; }
+
+INPUT:focus:required:invalid, SELECT:focus:required:invalid, TEXTAREA:focus:required:invalid {
+	border-color: lighten(@warning-brd, 20%);
+	color: @warning-txt; }
+ 
+INPUT:focus:required:invalid:focus, SELECT:focus:required:invalid:focus,TEXTAREA:focus:required:invalid:focus {
+	 border-color: @warning-brd;
+	 /*	TODO — Check variable in bootstrap and create color variable for shade based on error colors */
+	 .box-shadow(0 0 6px #F8B9B7); }
+
+/*	.success .help-block, */ .success .help, .success INPUT,
+/*	.success .i-append .add-on, .success .i-prepend .add-on, */
+.success > LABEL, .success SELECT, .success TEXTAREA   {
+	color: @success-txt; }
+	
+.success INPUT, /*	.success .i-append .add-on, .success .i-prepend .add-on, */ .success SELECT, .success TEXTAREA {
+	border-color: @success-brd; }
+	
+.success INPUT:focus, .success SELECT:focus, .success TEXTAREA:focus {
+	border-color: lighten(@success-brd, 20%);
+	/* TODO — Check variable in bootstrap and create color variable for shade based on success colors */
+	.box-shadow(0 0 6px #7ABA7B); }
+
+/*.warning .help-block, */ .warning .help, .warning INPUT,
+/*	.warning .i-append .add-on, .warning .i-prepend .add-on, */
+.warning > LABEL, .warning SELECT, .warning TEXTAREA   {
+	/* TODO — Create variable */
+	color: @warning-txt; }
+	
+.warning INPUT, /*	.warning .i-append .add-on, .warning .i-prepend .add-on, */ .warning SELECT, .warning TEXTAREA {
+	/* TODO — Create variable */
+	border-color: @warning-brd; }
+	
+.warning INPUT:focus, .warning SELECT:focus, .warning TEXTAREA:focus {
+	border-color: lighten(@warning-brd, 20%)
+	/* TODO — Check variable in bootstrap and create color variable for shade based on warning colors */
+	.box-shadow(0 0 6px #DBC59E); }
+
+/*	==================================================
+	Help
+	==================================================	*/
+	
+/*.help-block, */ .help {
+	color: @c-nt;
+	.inline-block();
+	padding-left: 5px;
+	vertical-align: middle; }
+
+/*	==================================================
+	Grid
+	==================================================	*/
+
+/*	INPUT[class*="span"], SELECT[class*="span"], TEXTAREA[class*="span"], .i-uneditable[class*="span"],
+.row INPUT[class*="span"], .row SELECT[class*="span"], .row TEXTAREA[class*="span"], .row .i-uneditable[class*="SPAN"] - die6 */
+INPUT.span1, INPUT.span2, INPUT.span3, INPUT.span4, INPUT.span4d5, INPUT.span5, INPUT.span6,
+INPUT.span7, INPUT.span8, INPUT.span9, INPUT.span10, INPUT.span11, INPUT.span12,
+SELECT.span1, SELECT.span2, SELECT.span3, SELECT.span4, SELECT.span4d5, SELECT.span5, SELECT.span6,
+SELECT.span7, SELECT.span8, SELECT.span9, SELECT.span10, SELECT.span11, SELECT.span12,
+TEXTAREA.span1, TEXTAREA.span2, TEXTAREA.span3, TEXTAREA.span4, TEXTAREA.span4d5, TEXTAREA.span5, TEXTAREA.span6,
+TEXTAREA.span7, TEXTAREA.span8, TEXTAREA.span9, TEXTAREA.span10, TEXTAREA.span11, TEXTAREA.span12
+/*, .i-uneditable.span1, .i-uneditable.span2, .i-uneditable.span3, .i-uneditable.span4, .i-uneditable.span4d5,
+.i-uneditable.span5, .i-uneditable.span6, .i-uneditable.span7, .i-uneditable.span8,
+.i-uneditable.span9, .i-uneditable.span10, .i-uneditable.span11, .i-uneditable.span12 */ {
+	float: none;
+	margin-left: 0; }
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+LEGEND { margin-bottom: @baseline-mob + 0em; }
+
+/*	Buttons container ---------- */
+
+.f-actions {
+	margin-top: @baseline-mob + 0em;
+	margin-bottom: @baseline-mob + 0em;
+	padding: (@baseline-mob + 0em) 0;
+	*zoom: 1; }
+
+/*	Labels and placeholders ---------- */
+
+LABEL B {
+	display: none; /* Hide label text marked as bold and use placeholder attribute instead. */
+	display: inline \9; }
+
+:-moz-placeholder { color: @c-nt; }
+:focus:-moz-placeholder {
+	color: lighten(@c-nt, 20%);
+	-moz-transition: background-position 0.1s linear; }
+
+:-ms-input-placeholder { color: @c-nt; }
+:focus:-ms-input-placeholder {
+	color: lighten(@c-nt, 20%);
+	-ms-transition: background-position 0.1s linear; }
+
+::-webkit-input-placeholder { color: @c-nt; }
+:focus::-webkit-input-placeholder {
+	color: lighten(@c-nt, 20%);
+	-webkit-transition: color 0.1s linear; }
+
+
+/*	Text inputs and textareas ---------- */
+
+INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA, .txt INPUT {
+	margin: .5em 0;
+	width: 100%; }
+
+/*	Checkboxes, radiobuttons, input-images nad input-files ---------- */
+
+.rb INPUT, .cbx INPUT { top: @bmem + 0em; }
+
+/*	Capthca ---------- */
+
+#i-captcha {
+	float: none;
+	margin: 0;
+	width: auto; }
+
+/*	Grouping ---------- */
+
+FORM .group { margin-bottom: 9 * @bmem + 0em; }
+
+LEGEND + .group { margin-top: 18 * @bmem + 0em; }
+
+.f .group { margin-bottom: 18 * @bmem + 0em; }
+
+.f LABEL {
+	float: none;
+	padding-top: 0; }
+
+.f .group DIV {
+	*display: inline-block;
+	margin-left: 0;
+	*padding-left: 0; }
+
+.f .group DIV:first-child {	*padding-left: 0; }
+
+.f .f-actions { padding-left: 0; }
+
+/*	Standart (labels-on-left) and inline forms ---------- */
+
+.f-inline INPUT, .f INPUT,
+.f-inline TEXTAREA, .f TEXTAREA,
+.f-inline SELECT, .f SELECT,
+.f-inline .help, .f .help
+/*, .f-inline .i-uneditable, .f .i-uneditable,
+.f-inline .i-append, .f .i-append,
+.f-inline .i-prepend, .f .i-prepend */ {
+	display: block;
+	margin-bottom: initial; }
+	
+.f-inline .cbx, .f-inline .rb { margin-bottom: initial; }
+	
+/*	.f-inline .cbx INPUT[type="checkbox"], .f-inline .rb INPUT[type="radio"] - die6 */
+.f-inline .cbx INPUT, .f-inline .rb INPUT  {
+	float: none;
+	margin-right: 0;
+	margin-left: initial; }
+
+/*	Search ---------- */
+
+.f-search BUTTON { display: none; }
+
+/*	Search — Hide for SMS novel. Remove it after implementation */
+
+.f-search { display: none; }
+
+/*	Help ---------- */
+.help { display: block; }
+}
+
+/*	**************************************************
+	
+	PORTRAIT PHONES
+	
+	**************************************************	*/
+@media only screen and (max-width: 479px) {
+
+FORM { padding: 0 20px; }
+}

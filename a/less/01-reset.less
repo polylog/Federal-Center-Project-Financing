@@ -1,0 +1,114 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*	Display in IE6-9 and FF3 */
+ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, NAV, SECTION, SUMMARY { display: block; }
+
+/*	Display block in IE6-9 and FF3 */
+AUDIO, CANVAS, VIDEO {
+	display: inline-block; 
+	*display: inline;
+	*zoom: 1; }
+
+/*	Prevents modern browsers from displaying 'audio' without controls */
+AUDIO:not([controls]) {
+	display: none;
+	height: 0; }
+
+[hidden] { display: none; }
+
+/*	==================================================
+	Base settings
+	==================================================	*/
+
+HTML {
+	font-size: 100%;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;	}
+
+HTML, BODY { height: 100%; }
+
+
+/*	==================================================
+	Typography
+	==================================================	*/
+
+/*	Focus states */
+A:focus { .tab-focus(); }
+
+/*	Hover & active */
+A:hover, A:active { outline: 0; }
+
+A[href^="#"], A[href^="javascript:"] { -webkit-touch-callout: none; }
+
+H1, H2 {
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: -.04em; }
+
+SUB, SUP {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline; }
+
+	SUP { top: -0.5em; }
+
+	SUB { bottom: -0.25em; }
+
+
+/*	==================================================
+	Media
+	==================================================	*/
+
+/*	Responsive images require to remove the media's height and width attributes from the HTML */
+IMG {
+	border: 0;
+	display: block;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+	height: auto; /* Part 2: Scale the height according to the width, otherwise you get stretching */
+	max-width: 100%;
+	width: auto\9; /* IE7-8 need help adjusting responsive images */ }
+
+/*	Prevent max-width from affecting Google Maps */
+#map_canvas IMG { max-width: none; }
+
+
+/*	==================================================
+	Buttons and forms
+	==================================================	*/
+
+BUTTON, INPUT, SELECT, TEXTAREA { font-size: 100%; }
+
+BUTTON, .btn, INPUT {
+	line-height: normal; /* FF3/4 have !important on line-height in UA stylesheet */
+	*overflow: visible; } /*	Inner spacing ie IE6/7 */
+	
+	TABLE INPUT { *overflow: auto; }
+
+BUTTON::-moz-focus-inner, INPUT::-moz-focus-inner { /* Inner padding and border oddities in FF3/4 */
+  border: 0;
+  padding: 0; }
+
+/*	Cursors on all buttons applied consistently.
+	I don't use Bootstrap
+	-webkit-appearance: none
+	to prevent webkit buttons styling */
+BUTTON, .btn { cursor: pointer; }
+  
+INPUT[type="search"], .i-search {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box; }
+
+INPUT[type="search"]::-webkit-search-decoration, INPUT[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none; } /*	Inner-padding issues in Chrome OSX, Safari 5 */
+
+TEXTAREA {
+  overflow: auto; /* Remove vertical scrollbar in IE6-9 */
+  resize: vertical;
+  vertical-align: top; } /*	Readability and alignment cross-browser */
+
+TEXTAREA[contenteditable] { -webkit-appearance: none; }

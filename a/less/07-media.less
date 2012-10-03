@@ -1,0 +1,70 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+	
+FIGURE { margin: 0 0  @baseline + 0em; }
+
+	FIGCAPTION { padding: (5/4 * @baseline + 0em) 0 0; } /*	30px 0 0 */
+
+FIGURE.video {
+	margin: (7/4 * @baseline + 0em) 0 (11/6 * @baseline + 0em); /* 42px 0 44px */
+	padding: 30px 0 56.25%;
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	*zoom: 1; }
+
+	FIGURE.video EMBED, FIGURE.video IFRAME, FIGURE.video OBJECT {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%; }
+
+	FIGURE.video EMBED, FIGURE.video IFRAME, FIGURE.video OBJECT { *width: expression(this.width > 440 ? 440: true) !important; }
+
+
+/*	Fluid media requires that you remove the media's height and width attributes from the HTML */
+IMG { margin: (7/4 * @baseline + 0em) 0 (5/4 * @baseline + 0em); } /*	42px 0 30px; */
+	
+	FIGURE IMG { margin-bottom: 0; }
+
+	IMG.left {
+		float: left;
+		margin: 2px 20px 10px 0; }
+
+	IMG.right {
+		float: right;
+		margin: 2px 0 10px 20px; }
+
+	FORM IMG { margin: 0; }
+
+SVG:not(:root) { overflow: hidden; }
+
+VIDEO { width: 100% !important; }
+
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+FIGURE { margin-bottom: @baseline-mob + 0em; }
+
+	FIGCAPTION { padding-top: (6/5 * @baseline-mob + 0em); } /*	24px */
+
+FIGURE.video { margin: (9/5 * @baseline-mob + 0em) 0 (19/10 * @baseline-mob + 0em); } /*	36px 0 38px */
+
+IMG { margin: (9/5 * @baseline-mob + 0em) 0 (11/5 * @baseline-mob + 0em); } /*	36px 0 44px; */
+	
+	IMG.left { 
+		margin-left: 20px;
+		max-width: 130px; }
+
+	IMG.right {
+		margin-right: 20px;
+		max-width: 130px; }
+}

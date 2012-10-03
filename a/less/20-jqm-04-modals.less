@@ -1,0 +1,36 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+.ui-dialog-contain {
+	width: 92.5%;
+	max-width: 480px;
+	margin: 10% auto 20px auto;
+	padding: 0; }
+
+.ui-dialog .ui-header {
+	margin-top: 15%;
+	border: none;
+	overflow: hidden; }
+
+.ui-dialog .ui-header, .ui-dialog .ui-content, .ui-dialog .ui-footer {
+	display: block;
+	position: relative;
+	width: auto; }
+
+.ui-dialog .ui-header, .ui-dialog .ui-footer {
+	z-index: 10;
+	padding: 0; }
+
+.ui-dialog .ui-footer { padding: 0 20px; }
+
+.ui-dialog .ui-content { padding: 20px; }
+
+.ui-dialog { margin-top: -20px; }
+
+@media only screen and (min-width: 768px) {
+
+.ui-dialog-contain { margin-bottom: 40px; }
+.ui-dialog .ui-footer { padding: 0 40px; }
+.ui-dialog .ui-content { padding: 40px; }
+.ui-dialog { margin-top: -420px; }
+}

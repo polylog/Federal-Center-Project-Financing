@@ -1,0 +1,68 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+DL, DD { margin: 0 0 @baseline + 0em; }
+
+DT {
+	font-weight: bold;
+	margin: 0; }
+
+OL {
+	list-style: decimal;
+	margin: 0 0 @baseline + 0em;
+	padding: 0 0 0 40px; }
+
+UL {
+	list-style-image: url(/a/img/b.gif);
+	margin: 0 0 @baseline + 0em;
+	padding: 0 0 0 20px; }
+
+UL UL, UL OL, OL OL, OL UL { margin-bottom: 0; }
+
+NAV UL, NAV OL {
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0; }
+
+OL.unstyled, UL.unstyled {
+	padding-left: 0;
+	list-style: none; }
+
+.inline {
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+	
+	LI {
+		border-right: @brd;
+		.inline-block();
+		padding: 0 10px 0 5px; }
+	
+	LI.last {
+		border-right: 0;
+		padding-right: 0; }
+	 
+	 }
+	 
+.list-view {
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+	
+	LI { margin-bottom: @baseline + 0em; }
+	
+	TIME:before { content: '\2014 \00A0'; }
+	 
+	 }
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+@media only screen and (max-width: 767px) {
+
+DL, DD, OL, UL, .arj LI { margin-bottom: @baseline-mob + 0em; }
+}

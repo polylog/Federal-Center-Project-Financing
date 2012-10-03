@@ -1,0 +1,159 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+BUTTON, .btn { /* Test comment */
+	-webkit-appearance: none; /* Prevent webkit buttons styling */
+	#gradient > .vertical(@c-btn-light, @c-btn-dark);
+	border: 1px solid darken(@c-btn-light, 10%);
+	*border: 0;
+	border-color: darken(@c-btn-light, 10%) darken(@c-btn-light, 10%) darken(@c-btn-dark, 5%); /* Light gradient -10%; Dark gradient -5% */
+	.border-radius(4px);
+	.box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 1px 2px rgba(0, 0, 0, 0.16));
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 100%;
+	text-align: center;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, .44);
+	margin: 38px 0; /* 38px 0 */
+	padding: 13px 10px;
+	vertical-align: middle;
+	*zoom: 1 }
+
+FORM BUTTON, FORM .btn {
+	margin-left: 0;
+	margin-right: 0; }
+
+BUTTON { *padding: 11px 10px; /* Standart top and bottom padding -2px */ }
+
+.f-actions BUTTON, .f-actions .btn, .f-inline BUTTON, .f-inline .btn {
+	display: inline-block;
+	*display: inline; }
+
+/*	==================================================
+	Buttons states
+	==================================================	*/
+
+.btn:visited, .btn:hover { color: #FFF; }
+
+.btn:hover {
+	background-color: #66C; /* Gradient goes up to uncover its dark side */
+	background-position: 0 -15px;
+	text-decoration: none;
+	.transition(background-position 0.1s linear); }
+
+.btn-menu:hover, .btn-option:hover, .btn-search:hover { background-color: #333538; }
+
+.btn-back:hover { background-position: -120px 0; }
+
+BUTTON:focus {
+	outline: thin dotted #CCCFD3;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px; }
+
+.btn.active, .btn:active { /* Replace gradient with darker color. Add deep inner shade */
+	background-color: #66C;
+	background-image: none;
+	.box-shadow(inset 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12));
+	outline: 0; }
+
+.btn-menu:active, .btn-option:active, .btn-search:active { background-color: #333538; }
+
+.btn-back:active { background-position: -180px 0; }
+
+BUTTON[disabled], .btn.disabled  {
+	background-position: 0 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	cursor: default;
+	opacity: .44;
+	filter: alpha(opacity=44); }
+
+.btn.disabled  { /* die6 */
+	cursor: default;
+	filter: alpha(opacity=44); }
+
+/*	==================================================
+	Btn-sizes
+	==================================================	*/
+
+.btn-large {
+	font-size:; 
+	padding:;
+	*padding:; /* Standart top and bottom padding -2px */ }
+
+.btn-small {
+	padding: 6px 10px;
+	*padding: 4px 10px; }
+
+TABLE BUTTON, TABLE .btn { *overflow: auto; }
+
+/*	==================================================
+	Clear and close
+	==================================================	*/
+
+BUTTON.clear, BUTTON.close { background: @c-clear-close; }
+
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+BUTTON, .btn { margin: 8px 20px 8px; } /*	8px 20px 8px */
+
+.btn-menu, .btn-option, .btn-search { /* Buttons in mobile header */
+	#gradient > .vertical(#5F6164, #333538);
+	border-color: rgba(0, 0, 0, .64);
+	.border-radius(5px);
+	.box-shadow(inset 0 1px 0 #76787A, 0 1px 0 rgba(255, 255, 255, .2));
+	color: #C9CCD0 !important;
+	display: inline-block;
+	font-size: 75%;
+	font-weight: bold;
+	margin: 0;
+	padding: 7px 9px 8px;
+	position: absolute;
+	min-height: 12px;
+	min-width: 24px; }
+
+.btn-back { /* Button Back in mobile header */
+	.bg-img;
+	.ir;
+	background-position: -60px 0;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 100%;
+	position: absolute;
+	min-height: 12px;
+	min-width: 24px;
+	vertical-align: middle;
+	height: 30px;
+	width: 49px;
+	*zoom: 1; }
+
+.btn-back, .btn-menu, .btn-option, .btn-search { top: 7px; }
+.btn-back, .btn-menu { left: 10px; }
+.btn-option, .btn-search { right: 10px; }
+
+/*	Buttons with icons */
+.btn-menu, .btn-search { .ir();
+
+&:before { /* Buttons icons */
+	.bg-img();
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 6px;
+	height: 30px;
+	width: 30px; }
+}
+	.btn-menu:before { background-position: -120px 0; }
+	.btn-search:before { background-position: -160px 0; }
+}

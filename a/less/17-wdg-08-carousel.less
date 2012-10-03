@@ -1,0 +1,110 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+/*
+<!--
+<div class="slideshow">
+	<ul>
+		<li>Lorem ipsum…</li>
+		<li><img src="images/01.jpg" alt=""></li>
+		<li>Lorem ipsum…</li>
+		<li><img src="images/02.jpg" alt=""></li>
+	</ul>
+</div>
+
+/a/js/scripts.htm
+    $('.slideshow').easySlider({
+        auto: true,
+        continuous: true,
+        pause: 1000,
+        controlsShow: false,
+        hoverPause: true
+    });
+*/
+
+.slideshow {
+	position: relative;
+	height:;
+	width:;
+	*zoom: 1;
+
+	.slide {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height:;
+		z-index: 1;}
+	}
+	
+/* Easy Slider */
+.slideshow UL {
+	list-style-image: none;
+	list-style: none;
+	margin: 0;
+	padding: 0; }
+
+.slideshow UL UL { /* Restore UL design */
+	}
+
+.slideshow LI { /* Width and height of list item (slide) */ 
+	height: ;
+	width: ;}
+
+/* Controls */
+#slideshow-prev, #slideshow-next {
+	position: absolute;
+	top: ;
+	left: ;
+	height: ;
+	width: ;
+	z-index: 44;
+	
+	A {
+	bg-img();
+	background-position:;
+	ir();
+	position: relative; }
+	}
+
+#slideshow-next { left: ; }
+
+/* Numeric controls */	
+OL#controls {
+	.clearfix();
+	margin: @baseline + 0em 0;
+	padding: 0;
+	height: ;}
+
+OL#controls LI {
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 0;
+		
+	A {
+		background:;
+		border: ;
+		color: ;
+		display: block;
+		line-height: ;
+		text-decoration: none;
+		padding: 0 10px; }
+	}
+
+
+
+OL#controls LI.current a {
+	background: ;
+	color: ;}
+	
+/* // Easy Slider */
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+}

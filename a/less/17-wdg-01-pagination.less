@@ -1,0 +1,66 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+.pagination { margin: (38 * @bem + 0em) 0 (@baseline/3); } /*	38px 0 8px */
+
+.pagination UL {
+	.border-radius(3px);
+	.box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+	.inline-block(); }
+
+	.pagination LI { display: inline; }
+	
+	.pagination A {
+		/* There is a border in the Shared:variables section */
+		border-left-width: 0;
+		float: left;
+		line-height: 42px;
+		text-decoration: none;
+		padding: 0 17px;
+		height: 42px; }
+
+.pagination A:hover, .pagination .current A { background: @c-tr; }
+
+.pagination .current A, .pagination .disabled SPAN, .pagination .disabled A, .pagination .disabled A:hover {
+	color: @c-txt;
+	cursor: default; }
+
+.pagination .disabled SPAN, .pagination .disabled A, .pagination .disabled A:hover {
+	background-color: transparent; }
+
+
+/*	Prev-Next buttons */
+.pagination LI:first-child A, .pagination LI:last-child A {
+	text-indent: -4000em;
+	position: relative;
+	*zoom: 1; }
+
+.pagination LI:first-child A:before, .pagination LI:last-child A:after {
+	text-indent: 0;
+	position: absolute;
+	top: 0;
+	left: 40%; 
+	width: 1em; }
+
+.pagination LI:first-child A:before { content: '\00ab'; }
+
+.pagination LI:last-child A:after { content: '\00bb'; }
+
+.pagination LI:first-child A, .pagination .first A {
+	border-left-width: 1px;
+	.border-radius(3px 0 0 3px); }
+
+.pagination LI:last-child A, .pagination .last A { .border-radius(0 3px 3px 0); }
+
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+.pagination { margin: (28 * @bmem + 0em) 0 (@baseline-mob/5 + 0em) (@baseline-mob + 0em); } /*	28px 0 4px 20px */
+}

@@ -1,0 +1,23 @@
+# Auxiliary Folders
+_notes/
+web-design/
+a/css/*
+!a/css/styles.css
+a/less/_stock/
+
+# Auxiliary Files
+.esproj
+.zip
+a/img/_grid-bl20.png
+a/img/_grid-bl24.png
+404.htm
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

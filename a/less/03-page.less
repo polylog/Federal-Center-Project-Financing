@@ -1,0 +1,56 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+HTML { overflow-y: scroll; }
+
+BODY {
+	background: @bg-body;
+	counter-reset: section;
+	line-height: @baseline;
+	text-align: center;
+	margin: 0;
+	padding: 0; }
+/*	If set background on body instead .page and IE8 will crush with BODY image
+background reassign background to HTML using some hacks */
+/*	HTML {
+background-color: #FFF\0/;
+background-image: url(/a/img/bg.png)\0/;
+background-repeat: repeat-x\0/; }
+ 
+BODY {
+background: none\0/; }
+*/
+
+.page {
+	background: @bg-body; /* Repeat body background for slide out manipulation */
+	text-align: left;
+	position: relative;
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto;
+	*height: 100%;
+	max-width: @max-width;
+	width: auto;
+	*width: @max-width;
+	*zoom: 1; }
+
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+HTML { overflow-y: auto; }
+
+BODY {
+	background: @bg none;
+	line-height: @baseline-mob; }
+
+.page {	
+	max-width: none;
+	width: auto; }
+}

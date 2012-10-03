@@ -1,0 +1,83 @@
+@import '02-variables.less';
+@import '02-mixins.less';
+
+.doc-header, .doc-body, .doc-footer, .cfx, .row { .clearfix; }
+
+.left, .tsr { float: left; }
+.right { float: right; }
+
+.doc-body {
+	position: relative;
+	padding-bottom: @footer-height + 80px;
+	*zoom: 1; }
+
+.row { width: 100%; }
+
+/*	.row [class*='span'], - die6 */
+.col, .solid, .third, .half {
+	.box-sizing(border-box);
+	display: block;
+	list-style: none; /* Make columns of lists */
+	list-style-image: none; 
+	margin-bottom: 0;
+	padding: 0 20px;
+	position: relative;
+	min-height: 1px;
+	*zoom: 1; }
+
+.col, .third, .half { float: left; }
+
+.row [class*="span"]:first-child, .row .first-col {
+    margin-left: 0; }
+
+.third { width: 33.33%; }
+	
+.half { width: 50%; }
+
+.row [class*='span']:last-child {
+	/* There are two solutions for disguising webkit rounding bug
+	1) This is the first and the second is...
+	2) .row [class*='span']:last-child { float: right; } */
+	float: none;
+	overflow: hidden;
+	width: auto; }
+
+/*	3 columns layout based on 980px .doc-body max-width and 580px .doc-main maximum width */
+.doc-sidebar-nav { 
+	float: left;
+	margin-left: 4.08163265%; /*40px*/
+	*margin-left: 3.97959184%; /*39px*/
+	width: 160px; }
+
+.doc-main { /* 580 / 980 */
+	margin-left: 3.57142857%; /*35px*/
+	*margin-left: 3.46938776%; /*34px*/
+	width: 59.1836735%;
+	*width: 59.0816327%; }
+
+/*	**************************************************
+	
+	!! BL SHIFT !!
+	PHONES & SMALL PORTRAIT TABLETS
+	
+	**************************************************	*/
+
+@media only screen and (max-width: 767px) {
+
+
+.left, .right { max-width: 50%; }
+
+/*	.row [class*='span'], - die6 */
+.col, .third, .half {
+	float: none;
+	width: 100%; }
+
+.doc-main { margin-left: 0; }
+
+/*	Only teasers lay out in 2 columns */
+.tsr { width: 50% ; }
+
+.doc-body { padding: (17/5 * @baseline-mob + 0em) 0 (@baseline-mob + 0em); /* Add on top 68px, fixed header space and remove space for absolute positioned footer */ }
+
+.doc-main { width: 100%; }
+}
