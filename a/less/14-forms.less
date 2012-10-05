@@ -17,7 +17,7 @@ FIELDSET {
 		border: 0;
 		font-weight: bold;
 		text-align: left;
-		margin-bottom: @baseline + 0em;
+		margin-bottom: @emptyline;
 		*margin-left: -7px;
 		padding: 0;
 		white-space: normal;
@@ -28,9 +28,9 @@ FIELDSET {
 	==================================================	*/
 
 .f-actions {
-	margin-top: @baseline + 0em;
-	margin-bottom: @baseline + 0em;
-	padding: (@baseline + 0em) 0;
+	margin-top: @emptyline;
+	margin-bottom: @emptyline;
+	padding: @emptyline 0;
 	*zoom: 1; }
 
 .f-actions:before, .f-actions:after {
@@ -52,13 +52,12 @@ LABEL {
 		font-weight: normal; }
 	}
 
-.f-lot LABEL { margin-top: @baseline + 0em; }
+.f-lot LABEL { margin-top: @emptyline; }
 	
 	.f-lot LABEL.first, .f-lot LABEL:first-child { margin-top: 0 ; }
 
-/*	We have to use few rules, because browsers ignore a rule with an unknown selector.
-	TODO — create variable — the same color is used for note, date etc */
-:-moz-placeholder { color: @c-input; }
+/*	We have to use few rules, because browsers ignore a rule with an unknown selector. */
+:-moz-placeholder { color: @c-input; } /* Placeholder isn't supported in Firefox 3.6 */
 :-ms-input-placeholder { color: @c-input; }
 ::-webkit-input-placeholder { color: @c-input; }
 
@@ -91,7 +90,7 @@ INPUT, TEXTAREA {
 	transition: border linear 0.2s, box-shadow linear 0.2s; }
 
 /*	==================================================
-	Checkboxes, radiobuttons, input-images nad input-files
+	Checkboxes, radiobuttons, input-images and input-files
 	==================================================	*/
 
 .rb, .cbx { /* Labels-containers */
@@ -108,7 +107,7 @@ INPUT[type="checkbox"], INPUT[type="image"], INPUT[type="radio"] {
 /*	.rb INPUT[type="radio"], .cbx INPUT[type="checkbox"], - die6 */
 .rb INPUT, .cbx INPUT {
 	position: absolute;
-	top: @baseline/6 + 0em;
+	top: 1em/@b;
 	left: 0; }
 
 INPUT[type="radio"] { vertical-align: text-bottom; }
@@ -144,7 +143,7 @@ INPUT[type="file"] {
 SELECT {
 	background: @c-input;
 	line-height: 28px;
-	*margin-top: @baseline/6 + 0em; /* For IE6/7 add top margin to align SELECT with LABELs */
+	*margin-top: 4em/@b; /* For IE6/7 add top margin to align SELECT with LABELs */
 	padding: 5px;
 	height: 28px; /* In IE7, the height of the SELECT element cannot be changed by height, only font-size */
 	width: 240px; }
@@ -164,14 +163,14 @@ SELECT[multiple], SELECT[size] { height: auto; }
 	Grouping
 	==================================================	*/
 
-FORM .group { margin-bottom: 9 * @bem + 0em; }
+FORM .group { margin-bottom: 9em/@b; }
 
 LEGEND + .group {
-	margin-top: 18 * @bem + 0em;
+	margin-top: 18em/@b;
 	-webkit-margin-top-collapse: separate; }
 
 .f .group {
-	margin-bottom: 18 * @bem + 0em;
+	margin-bottom: 18em/@b;
 	*zoom: 1; }
 
 .f .group:before, .f .group:after {
@@ -183,7 +182,7 @@ LEGEND + .group {
 .f LABEL {
 	float: left;
 	width: 140px;
-	padding-top: 5 * @bem + 0em;
+	padding-top: 5em/@b;
 	text-align: right; }
 
 .f .group DIV {
@@ -274,16 +273,17 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 	display: block;
 	font-family: inherit;
 	margin: 0;
-	padding: 12px 7px 4px;
+	padding: 8px 7px;
 	outline: none;
 	vertical-align: middle;
 	width: 100%; }
 
-.i-search:-moz-placeholder {
+.i-search:-moz-placeholder { /* Placeholder isn't supported in Firefox 3.6 */
 	color: @c-nt;
 	font-family: @font-h1;
 	font-size: 10px;
-	text-transform: uppercase; }
+	text-transform: uppercase;
+	padding-top: 4px; }
 .i-search:focus:-moz-placeholder {
 	color: lighten(@c-nt, 20%);
 	-moz-transition: background-position 0.1s linear; }
@@ -292,7 +292,8 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 	color: @c-nt;
 	font-family: @font-h1;
 	font-size: 10px;
-	text-transform: uppercase; }
+	text-transform: uppercase;
+	padding-top: 4px; }
 .i-search:focus:-ms-input-placeholder {
 	color: lighten(@c-nt, 20%);
 	-ms-transition: background-position 0.1s linear; }
@@ -301,7 +302,8 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 	color: @c-nt;
 	font-family: @font-h1;
 	font-size: 10px;
-	text-transform: uppercase; }
+	text-transform: uppercase;
+	padding-top: 4px; }
 .i-search:focus::-webkit-input-placeholder {
 	color: lighten(@c-nt, 20%);
 	-webkit-transition: color 0.1s linear; }
@@ -427,14 +429,14 @@ TEXTAREA.span7, TEXTAREA.span8, TEXTAREA.span9, TEXTAREA.span10, TEXTAREA.span11
 
 @media only screen and (max-width: 767px) {
 
-LEGEND { margin-bottom: @baseline-mob + 0em; }
+LEGEND { margin-bottom: @emptyline-mob; }
 
 /*	Buttons container ---------- */
 
 .f-actions {
-	margin-top: @baseline-mob + 0em;
-	margin-bottom: @baseline-mob + 0em;
-	padding: (@baseline-mob + 0em) 0;
+	margin-top: @emptyline-mob;
+	margin-bottom: @emptyline-mob;
+	padding: @emptyline-mob 0;
 	*zoom: 1; }
 
 /*	Labels and placeholders ---------- */
@@ -467,7 +469,7 @@ INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA, .txt INPUT {
 
 /*	Checkboxes, radiobuttons, input-images nad input-files ---------- */
 
-.rb INPUT, .cbx INPUT { top: @bmem + 0em; }
+.rb INPUT, .cbx INPUT { top: 1em/@bm; }
 
 /*	Capthca ---------- */
 
@@ -478,11 +480,11 @@ INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA, .txt INPUT {
 
 /*	Grouping ---------- */
 
-FORM .group { margin-bottom: 9 * @bmem + 0em; }
+FORM .group { margin-bottom: 9em/@bm; }
 
-LEGEND + .group { margin-top: 18 * @bmem + 0em; }
+LEGEND + .group { margin-top: 18em/@bm; }
 
-.f .group { margin-bottom: 18 * @bmem + 0em; }
+.f .group { margin-bottom: 18em/@bm; }
 
 .f LABEL {
 	float: none;

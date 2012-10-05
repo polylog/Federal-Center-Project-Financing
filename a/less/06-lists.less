@@ -1,7 +1,7 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-DL, DD { margin: 0 0 @baseline + 0em; }
+DL, DD { margin: 0 0 @emptyline; }
 
 DT {
 	font-weight: bold;
@@ -9,15 +9,17 @@ DT {
 
 OL {
 	list-style: decimal;
-	margin: 0 0 @baseline + 0em;
+	margin: 0 0 @emptyline;
 	padding: 0 0 0 40px; }
 
 UL {
 	list-style-image: url(/a/img/b.gif);
-	margin: 0 0 @baseline + 0em;
-	padding: 0 0 0 20px; }
+	margin: 0 0 @emptyline;
+	padding: 0; }
 
-UL UL, UL OL, OL OL, OL UL { margin-bottom: 0; }
+UL UL, UL OL, OL OL, OL UL {
+	margin-bottom: 0;
+	padding-left: 40px; }
 
 NAV UL, NAV OL {
 	list-style: none;
@@ -50,11 +52,25 @@ OL.unstyled, UL.unstyled {
 	list-style-image: none;
 	padding: 0;
 	
-	LI { margin-bottom: @baseline + 0em; }
+	LI { margin-bottom: @emptyline; }
 	
 	TIME:before { content: '\2014 \00A0'; }
 	 
 	 }
+
+.m-local {
+	border-bottom: @brd;
+	padding: 0 0 (@emptyline - 1em/@b);
+	
+	LI {
+		border-left: @brd;
+		display: inline;
+		padding: 0 .3em 0 .6em; }
+	
+	LI:first-child, .first {
+		border-left: 0 none;
+		padding-left: 0; }
+	}
 
 /*	**************************************************
 	
@@ -64,5 +80,13 @@ OL.unstyled, UL.unstyled {
 	**************************************************	*/
 @media only screen and (max-width: 767px) {
 
-DL, DD, OL, UL, .arj LI { margin-bottom: @baseline-mob + 0em; }
+DL, DD, OL, UL, .arj LI { margin-bottom: @emptyline-mob; }
+
+DL, OL, UL { padding-left: 20px; }
+
+UL { padding-left: 40px; }
+
+.list-view, .m-local {
+	padding-right: 20px;
+	padding-left: 20px; }
 }

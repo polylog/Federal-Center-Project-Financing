@@ -39,14 +39,15 @@ H2 A, H2 A:visited { color: @h2-color; }
 ADDRESS {
 	display: block;
 	font-style: normal;
-	margin-bottom: @baseline + 0em; }
+	margin-bottom: @emptyline; }
 
 B, STRONG { font-weight: bold; }
 
 BODY, BUTTON, INPUT, LABEL, SELECT, TEXTAREA {
 	color: @c-txt;
-	font-family: @font-sans;
-	font-size: @base-font-size; }
+	font-family: @font-sans; }
+
+BODY { font-size: @base-font-size; }
 
 .byline, FIGCAPTION, /*	.help-block, */ .help, .note, TIME { color: @c-nt; }
 
@@ -62,24 +63,24 @@ H1, H2, H3, H4 {
 H1 {
 	color: @h1-color;
 	font: @h1-font-weight @h1-font-size e('/')@h1-line-height @font-h1; /* Escape function */
-	padding-top: @h1-padding-t;
-	padding-bottom: @h1-padding-b; }
+	padding-top: 31em/@h1;
+	padding-bottom: 15em/@h1; }
 	
 	H1 + P:not([class]), HGROUP + P:not([class]), .doc-main > HEADER + P:not([class]), P.lead { font-weight: bold; }
 
 H2 {
 	font: @h2-font-weight @h2-font-size e('/')@h2-line-height @font-h2; /* Escape function */
-	padding-top: @h2-padding-t;
-	padding-bottom: @h2-padding-b; }
+	padding-top: 20em/@h2; /* 20px */
+	padding-bottom: 4em/@h2; /* 4px */ }
 
-H3, .h3, H4, .h4 { font-size: @base-font-size; }
+H3, .h3, H4, .h4 { font-size: 100%; }
 
 H4, .h4 { color: @green; }
 
-HGROUP, .doc-main > HEADER, P { margin: 0 0 @baseline + 0em; }
+HGROUP, .doc-main > HEADER, P { margin: 0 0 @emptyline; }
 
 	HGROUP H2 {
-		margin-top: -4 * @h2em + 0em;
+		margin-top: -4em/@h2;
 		padding-top: 0; }
 
 HR {
@@ -87,7 +88,7 @@ HR {
 	border-top: @brd;
 	clear: both;
 	display: block;
-	margin: (7/4 * @baseline - @bem + 0em) 0 (9/4 * @baseline - @bem + 0em);
+	margin: (7/4em * @baseline - 1/@b) 0 (9/4em * @baseline - 1/@b); /* 4 (16/4) empty lines */
 	padding: 0;
 	height: 1px; }
 
@@ -118,26 +119,26 @@ SMALL {	font-size: 81.3%; }
 BODY, BUTTON, INPUT, LABEL, SELECT, TEXTAREA {
 	font-size: @base-font-size-mob; }
 
-H1, H2, H3, H4, DL, .doc-main HEADER SMALL, P {
+H1, H2, H3, H4, .doc-main HEADER SMALL, P {
 	padding-right: 20px;
 	padding-left: 20px; }
 
 H1 {
 	font-size: @h1-font-size-mob;
 	line-height: @h1-line-height-mob;
-	padding-top: @h1-padding-t-mob;
-	padding-bottom: @h1-padding-b-mob; }
+	padding-top: 11em/@h1m;
+	padding-bottom: 6em/@h1m; }
 
 H2 {
 	font-size: @h2-font-size-mob;
 	line-height: @h2-line-height-mob;
-	padding-top: @h2-padding-t-mob;
-	padding-bottom: @h2-padding-b-mob; }
+	padding-top: 18em/@h2m; /* 18px */
+	padding-bottom: 2em/@h2m; /* 2px */ }
 
-HGROUP, .doc-main > HEADER, P { margin: 0 0 @baseline-mob + 0em; }
+HGROUP, .doc-main > HEADER, P { margin: 0 0 @emptyline-mob; }
 	
 	HGROUP H2 { margin-top: -2px; }
 
-HR { margin: (7/4 * @baseline-mob - @bmem + 0em) 0 (9/4 * @baseline-mob - @bmem + 0em); }
+HR { margin: (7/4em * @baseline-mob - 1/@bm) 0 (9/4em * @baseline-mob - 1/@bm); }  /* 4 (16/4) empty lines */
 	
 }

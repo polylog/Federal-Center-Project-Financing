@@ -1,11 +1,10 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-.pagination { margin: (38 * @bem + 0em) 0 (@baseline/3); } /*	38px 0 8px */
+.pagination { margin: 38em/@b 0 8em/@b; } /*	38px 0 8px */
 
 .pagination UL {
 	.border-radius(3px);
-	.box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
 	.inline-block(); }
 
 	.pagination LI { display: inline; }
@@ -62,5 +61,5 @@
 
 @media only screen and (max-width: 767px) {
 
-.pagination { margin: (28 * @bmem + 0em) 0 (@baseline-mob/5 + 0em) (@baseline-mob + 0em); } /*	28px 0 4px 20px */
+.pagination { margin: 28em/@bm 0 4em/@bm 20px; } /*	28px 0 4px 20px */
 }

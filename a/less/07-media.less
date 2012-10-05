@@ -1,30 +1,29 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 	
-FIGURE { margin: 0 0  @baseline + 0em; }
+FIGURE { margin: 0 0 @emptyline; }
 
-	FIGCAPTION { padding: (5/4 * @baseline + 0em) 0 0; } /*	30px 0 0 */
+	FIGCAPTION { padding: 30em/@b 0 0; } /*	30px 0 0 */
 
 FIGURE.video {
-	margin: (7/4 * @baseline + 0em) 0 (11/6 * @baseline + 0em); /* 42px 0 44px */
+	margin: 42em/@b 0 44em/@b; /* 42px 0 44px */
 	padding: 30px 0 56.25%;
 	position: relative;
 	height: 0;
 	overflow: hidden;
-	*zoom: 1; }
+	*zoom: 1;
 
-	FIGURE.video EMBED, FIGURE.video IFRAME, FIGURE.video OBJECT {
+	EMBED, IFRAME, OBJECT {
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 100%; }
-
-	FIGURE.video EMBED, FIGURE.video IFRAME, FIGURE.video OBJECT { *width: expression(this.width > 440 ? 440: true) !important; }
-
+	width: 100%;
+	*width: ~'expression(this.width > 440 ? 440: true)' !important; }
+	}
 
 /*	Fluid media requires that you remove the media's height and width attributes from the HTML */
-IMG { margin: (7/4 * @baseline + 0em) 0 (5/4 * @baseline + 0em); } /*	42px 0 30px; */
+IMG { margin: (7/4em * @baseline) 0 (5/4em * @baseline); } /*	42px 0 30px —  3 (12/4) empty lines */
 	
 	FIGURE IMG { margin-bottom: 0; }
 
@@ -52,19 +51,15 @@ VIDEO { width: 100% !important; }
 
 @media only screen and (max-width: 767px) {
 
-FIGURE { margin-bottom: @baseline-mob + 0em; }
+FIGURE { margin-bottom: @emptyline-mob; }
 
-	FIGCAPTION { padding-top: (6/5 * @baseline-mob + 0em); } /*	24px */
+	FIGCAPTION { padding-top: 24em/@bm; } /*	24px */
 
-FIGURE.video { margin: (9/5 * @baseline-mob + 0em) 0 (19/10 * @baseline-mob + 0em); } /*	36px 0 38px */
+FIGURE.video { margin: 36em/@bm 0 38em/@bm; } /* 36px 0 38px */
 
-IMG { margin: (9/5 * @baseline-mob + 0em) 0 (11/5 * @baseline-mob + 0em); } /*	36px 0 44px; */
+IMG {
+	margin: (9/5em * @baseline-mob) 20px (11/5em * @baseline-mob);
+	max-width: 92%; }
 	
-	IMG.left { 
-		margin-left: 20px;
-		max-width: 130px; }
-
-	IMG.right {
-		margin-right: 20px;
-		max-width: 130px; }
+	IMG.left, IMG.right { max-width: 130px; }
 }

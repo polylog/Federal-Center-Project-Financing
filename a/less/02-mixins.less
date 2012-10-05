@@ -48,6 +48,14 @@
   }
 }
 
+.gutter() {
+	margin-left: 100%*@gutter/@max-width;
+	*margin-left: 100%*(@gutter - 1)/@max-width; }
+
+.sidebar-width() {
+	width: 100%*@sidebar/@max-width;
+	*width: 100%*(@sidebar - 1)/@max-width; }
+
 .h2() {
 	font: @h2-font-weight @h2-font-size e('/')@h2-line-height @font-h2; /* Escape function */
 	-webkit-font-smoothing: antialiased;
@@ -409,7 +417,7 @@
 		to negative-margin away, but so it goes. */
 	background-color: @top;
 	border-bottom: 1px solid @bottom;
-	margin: ((@baseline / 2) - @bem) + 0em 1px (@baseline / 2) + 0em; /* One empty line */
+	margin: ((@baseline / 2) - 1/@b) + 0em 1px (@baseline / 2) + 0em; /* One empty line */
 	*margin: -5px 0 5px;
 	overflow: hidden;
 	height: 1px;

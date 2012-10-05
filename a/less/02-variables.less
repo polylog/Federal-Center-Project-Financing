@@ -4,6 +4,8 @@
 @max-width:					980px;
 @col-padding:				0 20px;
 @footer-height:				240px;
+@sidebar:					165px;
+@gutter:					35px;
 
 /*	==================================================
 	Color scheme
@@ -42,41 +44,36 @@
 
 @base-font-size:		    81.3%; /* 13px */
 @base-font-size-mob:		100%; /* 16px */
-@bem:						1/13; /* 1 pixel in em */
-@bmem:						1/16;
+@b:							13; /* conversion rate to ems */
+@bm:						16;
 
 @baseline:					1.54; /* 20px */
+@emptyline:					@baseline + 0em;
 @baseline-mob:				1.25; /* 20px */
+@emptyline-mob:				@baseline-mob + 0em;
 
 @font-h1:					'FreeSet Normal', Tahoma, Geneva, sans-serif;
 @h1-font-size:		        261.5%; /* 34px */
 @h1-font-weight:			normal;
 @h1-color:					#000;
-@h1em:						1/34;
+@h1:						34;
 @h1-line-height:		    1.17647059; /* 40px */
-@h1-padding-t:				51 * @h1em + 0em;
-@h1-padding-b:				15 * @h1em + 0em;
 
 @h1-font-size-mob:		    150%; /* 24px */
-@h1mem:						1/24;					
+@h1m:						24;					
 @h1-line-height-mob:		1.25; /* 30px */
-@h1-padding-t-mob:			31 * @h1mem + 0em;
-@h1-padding-b-mob:			6 * @h1mem + 0em;
 
 @font-h2:					@font-h1;
 @h2-font-size:		        161.5%; /* 21px */
 @h2-font-weight:			normal;
 @h2-color:					@c-txt;
-@h2em:						1/21;
+@h2:						21;
 @h2-line-height:		    .952; /* 20px */
-@h2-padding-t:				20 * @h2em + 0em; /* 20px */
-@h2-padding-b:				4 * @h2em + 0em; /* 4px */
 
 @h2-font-size-mob:		    125%; /* 20px */
-@h2mem:						1/20;
+@h2m:						20;
 @h2-line-height-mob:		1; /* 20px */
-@h2-padding-t-mob:			18 * @h2mem + 0em; /* 18px */
-@h2-padding-b-mob:			2 * @h2mem + 0em; /* 2px */
+
 
 /*	==================================================
 	Buttons

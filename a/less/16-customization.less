@@ -12,7 +12,7 @@
 		border-top: 4px solid #B1B1AC;
 		.box-sizing(border-box);
 		text-decoration: none;
-		padding: 11px 20px @baseline + 0em;
+		padding: 11px 20px @emptyline;
 		min-height: 300px;
 		*height: 300px;
 		width: 32.6530612%;
@@ -173,8 +173,8 @@
 @media only screen and (max-width: 767px) {
 
 #billboard .col {
-	margin: 0 20px @baseline-mob + 0em !important;
-	padding: 11px 20px @baseline-mob + 0em;
+	margin: 0 20px @emptyline-mob !important;
+	padding: 11px 20px @emptyline-mob;
 	min-height: 0;
 	width: auto; }
 
@@ -187,11 +187,11 @@
 #btl {
 
 	.col {
-	margin-bottom: @baseline-mob + 0em !important;
+	margin-bottom: @emptyline-mob !important;
 	min-height: 0;
 	width: auto !important; }
 	
-	UL.first { margin: 0 20px @baseline-mob + 0em !important;
+	UL.first { margin: 0 20px @emptyline-mob !important;
 	
 	A { font-size: @h2-font-size-mob !important; }
 	

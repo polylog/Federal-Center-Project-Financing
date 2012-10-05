@@ -1,6 +1,88 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
+.doc-sidebar {
+	color: #8e8c86;
+	float: left;
+	margin-top: @emptyline;
+	width: @sidebar;
+	
+	.box { margin-top: 0; }
+	}
+
+NAV.doc-sidebar {
+	.gutter(); /* Margin-left */
+	
+	.box UL { padding: 0 9px; }
+	
+	A {
+		.box-sizing(border-box);
+		display: block;
+		padding: 5px 10px;
+		position: relative;
+		width: 100%;
+		*zoom: 1;}
+	
+		/* Hover state */
+		A.active, A:hover, A:focus {
+			color: #8E8C86;
+			background: @c-sm-link-hover-bg !important;
+			text-decoration: none;
+			
+			&:after { /* Bevelled angles */
+				content: '';
+				display: block;
+				border-bottom: 12px solid @bg;
+				border-left: 12px solid transparent;
+				font-size: 0;
+				line-height: 0;
+				text-decoration: none;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 0; }
+		}
+	
+	}
+
+ASIDE.doc-sidebar {
+	.box {
+		HEADER { 
+			#gradient > .vertical-three-colors(#40a6cc, #1980a6, 76%, #3399bf);
+			border-top: 1px solid #5fb4d4; }
+		
+		H3 {
+			color: #FFF;
+			text-shadow: none;
+			
+			&:after { /* Bullet */
+				background: #4c96b7;
+				border: 1px solid rgba(0,0,0,.16);
+				.box-shadow(inset 0 1px 0 rgba(255,255,255,.12)); }
+			}
+	}
+	
+	
+	.open-space { padding: 0 20px;
+	H3 {
+		color: #000;
+		font: @h2-font-weight @h2-font-size e('/')@h2-line-height @font-h2; /* Escape function */
+		padding-top: 0;
+		padding-bottom: 22em/21; }
+	A:last-child:after {
+		.bg-img();
+		background-position: -400px 0;
+		.ir();
+		content: '';
+		.inline-block();
+		margin: -1px 0 0 .4em;
+		vertical-align: middle;
+		height: 16px;
+		width: 16px;
+		}
+	}
+	}
+
 /*	**************************************************
 	
 	PORTRAIT TABLETS: 768–979px
@@ -8,6 +90,13 @@
 	**************************************************	*/
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
+	
+	ASIDE.doc-sidebar { display: none; }
+	NAV.doc-sidebar {
+		float: right;
+		margin-left: 0;
+		margin-right: 100%*@gutter/@max-width;
+		*margin-right: 100%*(@gutter - 1)/@max-width; }
 }
 
 /*	**************************************************
@@ -19,8 +108,5 @@
 
 @media only screen and (max-width: 767px) {
 
-.doc-sidebar-nav { display: none; }
-.doc-relative {
-	float: none;
-	width: 100%; }
+.doc-sidebar { display: none; }
 }
