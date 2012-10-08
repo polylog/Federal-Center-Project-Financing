@@ -17,7 +17,7 @@ if (!(window.console && console.log)) {
 $(document).ready(function(){
 	$('iframe[src^="http://player.vimeo.com"], iframe[src^="http://www.youtube.com"], iframe[src*="dailymotion.com"], object:not([class*="not-video"]):not(:has(embed)), embed:not([class*="not-video"])').wrap('<figure class="video" />');
 	$('ol, ul').prev('p').css('margin-bottom', '0'); //lists captions
-    $('.slideshow').easySlider({
+	$('.slideshow').easySlider({
 		// prevText: 'Назад',
 		// nextText: 'Вперёд',
 		// firstText: 'Первый кадр',

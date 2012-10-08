@@ -2,7 +2,7 @@
 @import '02-mixins.less';
 
 FORM {
-	margin: 0;
+	margin: 0 0 @baseline;
 	padding: 0; }
 
 FIELDSET {
@@ -14,23 +14,25 @@ FIELDSET {
 
 	LEGEND {
 		display: block;
+		color: ;
 		border: 0;
 		font-weight: bold;
 		text-align: left;
-		margin-bottom: @emptyline;
+		margin-bottom: @baseline;
 		*margin-left: -7px;
 		padding: 0;
 		white-space: normal;
 		width: 100%; }
+
 
 /*	==================================================
 	Buttons container
 	==================================================	*/
 
 .f-actions {
-	margin-top: @emptyline;
-	margin-bottom: @emptyline;
-	padding: @emptyline 0;
+	margin-top: @baseline;
+	margin-bottom: @baseline;
+	padding: @baseline 0;
 	*zoom: 1; }
 
 .f-actions:before, .f-actions:after {
@@ -45,14 +47,15 @@ FIELDSET {
 
 LABEL {
 	cursor: pointer;
-	display: block; 
+	display: block;
+	margin-bottom: 5em/@b; 
 	
 	B {
 		display: inline; /* Show labels text on big screens */
 		font-weight: normal; }
 	}
 
-.f-lot LABEL { margin-top: @emptyline; }
+.f-lot LABEL { margin-top: @baseline; }
 	
 	.f-lot LABEL.first, .f-lot LABEL:first-child { margin-top: 0 ; }
 
@@ -68,26 +71,28 @@ LABEL {
 INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA {
 	background: @c-input;
 	border: @brd;
+	.box-sizing(border-box);
 	display: inline-block;
 	font-family: inherit;
 	margin: 0 0 .25em;
-	vertical-align: middle; }
+	vertical-align: middle;
+	width: 100%; }
 
-/*	INPUT[type="text"], - die6 */ INPUT.txt, .txt INPUT, TEXTAREA {
-	padding: 12px 7px;
+INPUT[type="text"], INPUT.txt, .txt INPUT, TEXTAREA {
+	padding: 6px 7px 7px;
 	outline: none; }
 
 INPUT, TEXTAREA {
 	.box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
-	/*
-	TODO - Error ocurs on using transition mixin with 2 properties
-	.transition(border linear 0.2s, box-shadow linear 0.2s);
-	*/
-	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
-	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
-	transition: border linear 0.2s, box-shadow linear 0.2s; }
+	.transition(~'border linear .2s, box-shadow linear .2s');
+	
+	 /* Focus state */
+  	&:focus {
+		border-color: darken(@c-brd, 24%);
+		outline: 0;
+		outline: thin dotted \9; /* IE6-9 */
+		.box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)); }
+	}
 
 /*	==================================================
 	Checkboxes, radiobuttons, input-images and input-files
@@ -104,7 +109,7 @@ INPUT[type="checkbox"], INPUT[type="image"], INPUT[type="radio"] {
 	*width: 13px;
 	*height: 13px; }
 
-/*	.rb INPUT[type="radio"], .cbx INPUT[type="checkbox"], - die6 */
+.rb INPUT[type="radio"], .cbx INPUT[type="checkbox"],
 .rb INPUT, .cbx INPUT {
 	position: absolute;
 	top: 1em/@b;
@@ -136,7 +141,7 @@ INPUT[type="file"] {
 
 /*	==================================================
 	Select
-	There are background, display, margin and vertical-align
+	There are background, border, display, margin and vertical-align
 	rules in the INPUTs section
 	==================================================	*/
 
@@ -154,9 +159,13 @@ SELECT[multiple], SELECT[size] { height: auto; }
 	Capthca
 	==================================================	*/
 
-#i-captcha {
+.img-captcha {
 	float: left;
 	margin: 0 20px 0 0;
+	height: 30px; }
+
+#i-captcha {
+	float: left;
 	width: 44%; }
 
 /*	==================================================
@@ -280,7 +289,7 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 
 .i-search:-moz-placeholder { /* Placeholder isn't supported in Firefox 3.6 */
 	color: @c-nt;
-	font-family: @font-h1;
+	font-family: @h1-font;
 	font-size: 10px;
 	text-transform: uppercase;
 	padding-top: 4px; }
@@ -290,7 +299,7 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 
 .i-search:-ms-input-placeholder {
 	color: @c-nt;
-	font-family: @font-h1;
+	font-family: @h1-font;
 	font-size: 10px;
 	text-transform: uppercase;
 	padding-top: 4px; }
@@ -300,7 +309,7 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 
 .i-search::-webkit-input-placeholder {
 	color: @c-nt;
-	font-family: @font-h1;
+	font-family: @h1-font;
 	font-size: 10px;
 	text-transform: uppercase;
 	padding-top: 4px; }
@@ -309,14 +318,8 @@ INPUT[type="search"], .i-search { margin-bottom: 0; }
 	-webkit-transition: color 0.1s linear; }
 
 /*	==================================================
-	Input states
+	Non text and textarea inputs states
 	==================================================	*/
-
-INPUT:focus, TEXTAREA:focus {
-	border-color: darken(@c-brd, 24%);
-	.box-shadow (inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6));
-	outline: 0;
-	outline: thin dotted \9; /* IE6-9	*/ }
 
 INPUT[type="file"]:focus, INPUT[type="radio"]:focus, INPUT[type="checkbox"]:focus, SELECT:focus {
 	.box-shadow(none);
@@ -325,8 +328,8 @@ INPUT[type="file"]:focus, INPUT[type="radio"]:focus, INPUT[type="checkbox"]:focu
 	outline-offset: -2px; }
 
 INPUT[disabled], SELECT[disabled], TEXTAREA[disabled], INPUT[readonly], SELECT[readonly], TEXTAREA[readonly] {
-	background-color: #EEE;
-	border-color: #DDD;
+	background-color: #e7eaee;
+	border-color: lighten(@c-brd, 50%);
 	cursor: default;
 	cursor: not-allowed; }
 
@@ -339,58 +342,40 @@ INPUT[type="hidden"] { display: none; }
 	Alerts
 	==================================================	*/
 
-/*	.error .help-block, */ .error .help, .error INPUT,
-/*	.error .i-append .add-on, .error .i-prepend .add-on, */ 
+/* Success */
+.success { .form-field-state(@success-txt, @success-brd, @success-bg); }
+
+/* Warning */
+.warning { .form-field-state(@warning-txt, @warning-brd, @warning-bg); }
+
+/* We shouldn't use more than 2 mixins here to prevent fatal node.js errors */
+/* Error */
+/*z.error { .form-field-state(@error-txt, @error-brd, @error-bg); } */
+/* Info */
+/*.info { .formFieldState(@info-txt, @info-brd, @info-bg); }*/
+
+/*.error .help-block, */ .error .help, .error INPUT,
+/*	.error .i-append .add-on, .error .i-prepend .add-on, */
 .error > LABEL, .error SELECT, .error TEXTAREA   {
 	color: @error-txt; }
 	
-.error INPUT, /*	.error .i-append .add-on, .error .i-prepend .add-on, */ .error SELECT, .error TEXTAREA {
-	/* TODO — Create variable */
+.error INPUT, /*	.warning .i-append .add-on, .warning .i-prepend .add-on, */ .error SELECT, .error TEXTAREA {
+	background: @error-bg;
 	border-color: @error-brd; }
 	
 .error INPUT:focus, .error SELECT:focus, .error TEXTAREA:focus {
-	border-color: lighten(@error-brd, 20%);
-	/* TODO — Check variable in bootstrap and create color variable for shade based on error colors */
-	.box-shadow(0 0 6px #D59392); }
-
+	border-color: lighten(@error-brd, 20%); }
+	
+/*	HTML5 invalid states. Shares styles with the .warning */
 INPUT:invalid, TEXTAREA:invalid { background: @warning-bg; }
 
 INPUT:focus:required:invalid, SELECT:focus:required:invalid, TEXTAREA:focus:required:invalid {
-	border-color: lighten(@warning-brd, 20%);
-	color: @warning-txt; }
- 
-INPUT:focus:required:invalid:focus, SELECT:focus:required:invalid:focus,TEXTAREA:focus:required:invalid:focus {
-	 border-color: @warning-brd;
-	 /*	TODO — Check variable in bootstrap and create color variable for shade based on error colors */
-	 .box-shadow(0 0 6px #F8B9B7); }
+	border-color: @warning-brd;
+	color: @warning-txt;
+	
+	&:focus { border-color: lighten(@warning-brd, 20%); }
+}
 
-/*	.success .help-block, */ .success .help, .success INPUT,
-/*	.success .i-append .add-on, .success .i-prepend .add-on, */
-.success > LABEL, .success SELECT, .success TEXTAREA   {
-	color: @success-txt; }
-	
-.success INPUT, /*	.success .i-append .add-on, .success .i-prepend .add-on, */ .success SELECT, .success TEXTAREA {
-	border-color: @success-brd; }
-	
-.success INPUT:focus, .success SELECT:focus, .success TEXTAREA:focus {
-	border-color: lighten(@success-brd, 20%);
-	/* TODO — Check variable in bootstrap and create color variable for shade based on success colors */
-	.box-shadow(0 0 6px #7ABA7B); }
-
-/*.warning .help-block, */ .warning .help, .warning INPUT,
-/*	.warning .i-append .add-on, .warning .i-prepend .add-on, */
-.warning > LABEL, .warning SELECT, .warning TEXTAREA   {
-	/* TODO — Create variable */
-	color: @warning-txt; }
-	
-.warning INPUT, /*	.warning .i-append .add-on, .warning .i-prepend .add-on, */ .warning SELECT, .warning TEXTAREA {
-	/* TODO — Create variable */
-	border-color: @warning-brd; }
-	
-.warning INPUT:focus, .warning SELECT:focus, .warning TEXTAREA:focus {
-	border-color: lighten(@warning-brd, 20%)
-	/* TODO — Check variable in bootstrap and create color variable for shade based on warning colors */
-	.box-shadow(0 0 6px #DBC59E); }
 
 /*	==================================================
 	Help
@@ -428,22 +413,27 @@ TEXTAREA.span7, TEXTAREA.span8, TEXTAREA.span9, TEXTAREA.span10, TEXTAREA.span11
 	**************************************************	*/
 
 @media only screen and (max-width: 767px) {
+	
+FORM { padding: 0 20px; }
 
-LEGEND { margin-bottom: @emptyline-mob; }
+LEGEND { margin-bottom: @baseline-mob; }
 
 /*	Buttons container ---------- */
 
 .f-actions {
-	margin-top: @emptyline-mob;
-	margin-bottom: @emptyline-mob;
-	padding: @emptyline-mob 0;
+	margin-top: @baseline-mob;
+	margin-bottom: @baseline-mob;
+	padding: @baseline-mob 0;
 	*zoom: 1; }
 
 /*	Labels and placeholders ---------- */
 
-LABEL B {
+LABEL {
 	display: none; /* Hide label text marked as bold and use placeholder attribute instead. */
-	display: inline \9; }
+	display: inline \9;
+	
+	B { display: inline; }
+	}
 
 :-moz-placeholder { color: @c-nt; }
 :focus:-moz-placeholder {
@@ -469,14 +459,19 @@ INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA, .txt INPUT {
 
 /*	Checkboxes, radiobuttons, input-images nad input-files ---------- */
 
-.rb INPUT, .cbx INPUT { top: 1em/@bm; }
+.rb, .cbx { padding-left: 24px; }
+
+.rb INPUT[type="radio"], .cbx INPUT[type="checkbox"], .rb INPUT, .cbx INPUT { top: -1em/@bm; }
 
 /*	Capthca ---------- */
 
+.img-captcha, #i-captcha { float: none; }
+
+.img-captcha { margin-top: @baseline-mob; }
+
 #i-captcha {
-	float: none;
-	margin: 0;
-	width: auto; }
+	margin: 10em/@bm 0 0;
+	width: 100%; }
 
 /*	Grouping ---------- */
 
@@ -538,5 +533,4 @@ LEGEND + .group { margin-top: 18em/@bm; }
 	**************************************************	*/
 @media only screen and (max-width: 479px) {
 
-FORM { padding: 0 20px; }
 }

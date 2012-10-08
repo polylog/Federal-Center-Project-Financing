@@ -18,7 +18,14 @@ BUTTON, .btn { /* Test comment */
 	margin: 38px 0; /* 38px 0 */
 	padding: 13px 10px;
 	vertical-align: middle;
-	*zoom: 1 }
+	*zoom: 1;
+	
+	&:hover {
+		background-color: @c-btn-dark; /*	Gradient goes up to uncover its dark side */
+		background-position: 0 -15px;
+		text-decoration: none;
+		.transition(background-position 0.1s linear); }
+	}
 
 FORM BUTTON, FORM .btn {
 	margin-left: 0;
@@ -35,12 +42,6 @@ BUTTON { *padding: 11px 10px; /* Standart top and bottom padding -2px */ }
 	==================================================	*/
 
 .btn:visited, .btn:hover { color: #FFF; }
-
-.btn:hover {
-	background-color: #66C; /* Gradient goes up to uncover its dark side */
-	background-position: 0 -15px;
-	text-decoration: none;
-	.transition(background-position 0.1s linear); }
 
 .btn-menu:hover, .btn-option:hover, .btn-search:hover { background-color: #333538; }
 
@@ -105,7 +106,7 @@ BUTTON.clear, BUTTON.close { background: @c-clear-close; }
 
 @media only screen and (max-width: 767px) {
 
-BUTTON, .btn { margin: 8px 20px 8px; } /*	8px 20px 8px */
+BUTTON, .btn { margin: @baseline-mob 20px 0; } /* 1.25em 20px 0 */
 
 .btn-menu, .btn-option, .btn-search { /* Buttons in mobile header */
 	#gradient > .vertical(#5F6164, #333538);

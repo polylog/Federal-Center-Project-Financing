@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Новости | ФЦПФ</title>
+<title>Задать вопрос | ФЦПФ</title>
 <meta name="description" content="">
 
 <!-- Mobile -->
@@ -14,16 +14,6 @@
 <!-- For Nokia devices -->
 <link rel="shortcut icon" href="/apple-touch-icon-57x57.png">
 <link rel="stylesheet" href="/a/css/styles.css?v1">
-
-<!-- Development styles. Remove on production -->
-<style type="text/css">
-input:-moz-placeholder {
- color:    #999 !important;
-}
-</style>
-<link  rel="stylesheet" href="/a/less/_stock/styles.css">
-<link rel="stylesheet" href="/a/less/_stock/_mediaquery-reporter.css">
-<!-- / Development styles. Remove on production -->
 
 <script src="/a/js/modernizr-2.6.1.min.js"></script>
 <!--[if (lt IE 9) & (!IEMobile)]>
@@ -71,35 +61,37 @@ input:-moz-placeholder {
 
 <!-- Main block -->
 <article class="doc-main">
-<h1>Новости</h1>
-<ul class="m-local">
-<li class="first">2012</li>
-<li><a href="/news/2011/">2011</a></li>
-</ul>
+<h1>Задать вопрос</h1>
+<p>Ответы предоставляются специалистами ФЦПФ в течение трех рабочих дней.</p>
+<form method="post" action="" id="f-ask" class="f-lot">
 
-<ul class="list-view">
-<li><a href="#">О платежах по государственным ценным бумагам РФ, выраженным в иностранной валюте‎</a> <time>03.10.2012</time></li>
-<li><a href="#">Ценные бумаги, обслуживаемые Депозитарием Внешэкономбанка, по которым ожидается выплата доходов в октябре 2012 года‎</a> <time>20.10.12</time></li>
-<li><a href="#">Внешэкономбанк вводит в действие изменения и дополнения к Типовым условиям осуществления депозитарной деятельности, предусматривающие возможность открытия счетов депо иностранным организациям, действующим в интересах других лиц</a> <time>20.10.12</time></li>
-<li><a href="#">Информационное сообщение о результатах размещения средств Резервного фонда и Фонда национального благосостояния</a> <time>20.10.12</time></li>
-<li><a href="#">Участники Монреальской Группы обсудили механизмы поддержки малых и средних предприятий
-</a> <time>20.10.12</time></li>
-<li><a href="#">О платеже по государственным ценным бумагам РФ, выраженным в иностранной валюте</a> <time>20.10.12</time></li>
-</ul>
+<label for="i-name"><b>Ваши фамилия, имя и отчество</b></label>
+<input id="i-name" name="i-name" type="text" maxlength="255" class="txt" placeholder="Ваши фамилия, имя и отчество">
 
-<nav class="pagination">
-<ul>
-<li class="first disabled"><a href="#">Prev</a></li>
-<li class="current"><a href="#">1</a></li>
-<li><a href="#">2</a></li>
-<li><a href="#">3</a></li>
-<li><a href="#">4</a></li>
-<li><a href="#">...</a></li>
-<li><a href="#">20</a></li>
-<li class="last"><a href="#">Next</a></li>
-</ul>
-</nav>
+<!--<label><input type="checkbox" data-role="none">
+Флаг</label>
 
+<label for="s-type">Характер обращения</label>
+<select id="s-type" name="s-type">
+<option value="ques">Вопрос</option>
+<option value="sugg">Предложение</option>
+<option value="misc">Иное</option>
+</select>-->
+
+<label for="i-email"><b>Ваш адрес электронной почты</b></label>
+<input id="i-email" name="i-email" type="text" maxlength="128" class="txt" placeholder="Ваш адрес электронной почты">
+
+<label for="i-ques"><b>По какому вопросу?</b></label>
+<textarea id="i-ques" name="i-ques" cols="60" rows="5" placeholder="По какому вопросу?"></textarea>
+
+<label for="i-captcha"><b>Защита от спама — введите код, который видите на картинке</b></label>
+<div class="cfx">
+<img src="/a/img/_tmp/captcha.png" alt="" class="img-captcha">
+<input id="i-captcha" name="i-captcha" maxlength="20" type="text" class="txt" placeholder="Защита от спама — введите код">
+</div>
+
+<button data-role="none" type="submit">Отправить</button>
+</form>
 </article>
 <!-- /main block --> 
 

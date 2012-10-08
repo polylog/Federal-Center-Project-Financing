@@ -57,7 +57,7 @@
 	*width: 100%*(@sidebar - 1)/@max-width; }
 
 .h2() {
-	font: @h2-font-weight @h2-font-size e('/')@h2-line-height @font-h2; /* Escape function */
+	font: @h2-font-weight @h2-font-size e('/')@h2-line-height @h2-font; /* Escape function */
 	-webkit-font-smoothing: antialiased;
 	letter-spacing: -.04em;
 	text-rendering: optimizelegibility; }
@@ -417,7 +417,7 @@
 		to negative-margin away, but so it goes. */
 	background-color: @top;
 	border-bottom: 1px solid @bottom;
-	margin: ((@baseline / 2) - 1/@b) + 0em 1px (@baseline / 2) + 0em; /* One empty line */
+	margin: ((@baseline / 2) - 1/@b) 1px (@baseline / 2); /* One empty line */
 	*margin: -5px 0 5px;
 	overflow: hidden;
 	height: 1px;

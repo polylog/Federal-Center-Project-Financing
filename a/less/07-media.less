@@ -1,7 +1,7 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 	
-FIGURE { margin: 0 0 @emptyline; }
+FIGURE { margin: 0 0 @baseline; }
 
 	FIGCAPTION { padding: 30em/@b 0 0; } /*	30px 0 0 */
 
@@ -23,7 +23,7 @@ FIGURE.video {
 	}
 
 /*	Fluid media requires that you remove the media's height and width attributes from the HTML */
-IMG { margin: (7/4em * @baseline) 0 (5/4em * @baseline); } /*	42px 0 30px —  3 (12/4) empty lines */
+IMG { margin: (7/4 * @baseline) 0 (5/4 * @baseline); } /*	42px 0 30px —  3 (12/4) empty lines */
 	
 	FIGURE IMG { margin-bottom: 0; }
 
@@ -51,14 +51,14 @@ VIDEO { width: 100% !important; }
 
 @media only screen and (max-width: 767px) {
 
-FIGURE { margin-bottom: @emptyline-mob; }
+FIGURE { margin-bottom: @baseline-mob; }
 
 	FIGCAPTION { padding-top: 24em/@bm; } /*	24px */
 
 FIGURE.video { margin: 36em/@bm 0 38em/@bm; } /* 36px 0 38px */
 
 IMG {
-	margin: (9/5em * @baseline-mob) 20px (11/5em * @baseline-mob);
+	margin: (9/5 * @baseline-mob) 20px (11/5 * @baseline-mob);
 	max-width: 92%; }
 	
 	IMG.left, IMG.right { max-width: 130px; }

@@ -18,8 +18,8 @@ ASIDE.left, ASIDE.right {
 
 BLOCKQUOTE {
 	background: @c-tr;
-	margin: @emptyline 0; /* 24px 0 */
-	padding: @emptyline 20px; /* 24px 20px */
+	margin: @baseline 0; /* 24px 0 */
+	padding: @baseline 20px; /* 24px 20px */
 	
 	P { padding: 0}
 	
@@ -43,7 +43,7 @@ BLOCKQUOTE {
 		
 		H3 {
 			color: #A58180;
-			font-family: @font-h1;
+			font-family: @h1-font;
 			font-size: 76.9%; /* 10px */
 			font-weight: 400;
 			text-shadow: 0 1px 0 rgba(255,255,255,1);
@@ -102,7 +102,7 @@ IFRAME {
 @media only screen and (max-width: 767px) {
 
 ASIDE.left, ASIDE.right {
-	margin: 0 0 @emptyline;
+	margin: 0 0 @baseline;
 	width: 100% !important; }
 
 .box { background: @c-tr;
@@ -116,8 +116,8 @@ ASIDE.left, ASIDE.right {
 	}
 
 BLOCKQUOTE {
-	margin: @emptyline-mob 0; /* 20px 0 */
-	padding: @emptyline-mob 20px; /* 20px */ }
+	margin: @baseline-mob 0; /* 20px 0 */
+	padding: @baseline-mob 20px; /* 20px */ }
 
 }
 /*	**************************************************

@@ -1,7 +1,7 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-DL, DD { margin: 0 0 @emptyline; }
+DL, DD { margin: 0 0 @baseline; }
 
 DT {
 	font-weight: bold;
@@ -9,12 +9,12 @@ DT {
 
 OL {
 	list-style: decimal;
-	margin: 0 0 @emptyline;
+	margin: 0 0 @baseline;
 	padding: 0 0 0 40px; }
 
 UL {
 	list-style-image: url(/a/img/b.gif);
-	margin: 0 0 @emptyline;
+	margin: 0 0 @baseline;
 	padding: 0; }
 
 UL UL, UL OL, OL OL, OL UL {
@@ -52,7 +52,7 @@ OL.unstyled, UL.unstyled {
 	list-style-image: none;
 	padding: 0;
 	
-	LI { margin-bottom: @emptyline; }
+	LI { margin-bottom: @baseline; }
 	
 	TIME:before { content: '\2014 \00A0'; }
 	 
@@ -60,7 +60,7 @@ OL.unstyled, UL.unstyled {
 
 .m-local {
 	border-bottom: @brd;
-	padding: 0 0 (@emptyline - 1em/@b);
+	padding: 0 0 (@baseline - 1em/@b);
 	
 	LI {
 		border-left: @brd;
@@ -80,7 +80,7 @@ OL.unstyled, UL.unstyled {
 	**************************************************	*/
 @media only screen and (max-width: 767px) {
 
-DL, DD, OL, UL, .arj LI { margin-bottom: @emptyline-mob; }
+DL, DD, OL, UL, .arj LI { margin-bottom: @baseline-mob; }
 
 DL, OL, UL { padding-left: 20px; }
 
