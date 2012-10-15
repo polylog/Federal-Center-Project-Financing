@@ -3,7 +3,7 @@
 
 .doc-header, .doc-body, .doc-footer, .cfx, .row { .clearfix; }
 
-.left, .tsr { float: left; }
+.left, .coverline, .tsr { float: left; }
 .right { float: right; }
 
 .doc-body {
@@ -11,7 +11,9 @@
 	padding-bottom: @footer-height + 80px;
 	*zoom: 1; }
 
-.row { width: 100%; }
+.row { /* Use .row for full width blocks inside .doc-body and .doc-main and .cfx for other purposes */
+	margin-bottom: @baseline;
+	width: 100%; }
 
 /*	.row [class*='span'], - die6 */
 .col, .solid, .third, .half {
@@ -33,6 +35,12 @@
 .third { width: 33.33%; }
 	
 .half { width: 50%; }
+
+.halfs-separated { /* With 40px gutter */
+	.col { width: 270/580 * 100%;}
+	
+	.col:last-child { float: right; }
+	}
 
 .row [class*='span']:last-child {
 	/* There are two solutions for disguising webkit rounding bug
@@ -64,15 +72,25 @@
 
 .left, .right { max-width: 50%; }
 
-/*	.row [class*='span'], - die6 */
+.row { margin-bottom: @baseline-mob; }
+
 .col, .third, .half {
-	float: none;
-	width: 100%; }
+	float: none !important;
+	margin-bottom: @baseline-mob;
+	width: 100% !important;
+	
+	DL, H2, H3, OL, P, UL { padding-right: 0; }
+	DL, H2, H3, P { padding-left: 0; }
+	}
 
 .doc-main { margin-left: 0; }
 
-/*	Only teasers lay out in 2 columns */
-.tsr { width: 50% ; }
+/*	Only coverlines lay out in 2 columns */
+.coverline {
+	float: left;
+	width: 100% * (360-1) / 2 / 360; }
+
+.row .coverline:last-child { float: right; }
 
 .doc-body { padding: 68em/@bm 0 @baseline-mob; /* Add on top 68px, fixed header space and remove space for absolute positioned footer */ }
 

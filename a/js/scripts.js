@@ -28,8 +28,28 @@ $(document).ready(function(){
         controlsShow: false,
         hoverPause: true
     });
+	equalHeights();
 	//$('.slideshow').tabs('.slideshow > div', {effect: 'fade', fadeOutSpeed: 'slow', rotate: true}).slideshow({autoplay: true, interval: 10000});
 });
+
+// Equal heights columns
+function equalHeights() {
+    //set the starting bigestHeight variable  
+    var biggestHeight = 0;
+    //check each of them  
+    $('.equal-height .col').each(function () {
+        //if the height of the current element is  
+        //bigger then the current biggestHeight value  
+        if ($(this).height() > biggestHeight) {
+            //update the biggestHeight with the  
+            //height of the current elements  
+            biggestHeight = $(this).height();
+        }
+    });
+    //when checking for biggestHeight is done set that  
+    //height to all the elements  
+    $('.equal-height .col').height(biggestHeight);
+}
 
 // FACEBOOK-LIKE SLIDE-OUT MENU. Author: Aldo Lugo — http://blog.aldomatic.com/facebook-style-slide-out-menu-in-jquery-mobile/ 
 $(function slideOut(){

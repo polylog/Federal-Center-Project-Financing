@@ -17,31 +17,36 @@ NAV.doc-sidebar {
 	
 	A {
 		.box-sizing(border-box);
+		color: @c-txt;
 		display: block;
 		padding: 5px 10px;
 		position: relative;
 		width: 100%;
-		*zoom: 1;}
-	
-		/* Hover state */
-		A.active, A:hover, A:focus {
-			color: #8E8C86;
-			background: @c-sm-link-hover-bg !important;
-			text-decoration: none;
-			
+		*zoom: 1;
+		
+		&:visited { color: @c-txt; }
+		
+		&.active, &:hover, &:focus {
+		color: #8E8C86;
+		background: @c-sm-link-hover-bg !important;
+		text-decoration: none;
+		
 			&:after { /* Bevelled angles */
-				content: '';
-				display: block;
-				border-bottom: 12px solid @bg;
-				border-left: 12px solid transparent;
-				font-size: 0;
-				line-height: 0;
-				text-decoration: none;
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				width: 0; }
+			content: '';
+			display: block;
+			border-bottom: 12px solid @bg;
+			border-left: 12px solid transparent;
+			font-size: 0;
+			line-height: 0;
+			text-decoration: none;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 0; }
+			}
 		}
+	
+
 	
 	}
 
@@ -55,7 +60,7 @@ ASIDE.doc-sidebar {
 			color: #FFF;
 			text-shadow: none;
 			
-			&:after { /* Bullet */
+			&:after { /* Bullet - See 09-boxes.css */
 				background: #4c96b7;
 				border: 1px solid rgba(0,0,0,.16);
 				.box-shadow(inset 0 1px 0 rgba(255,255,255,.12)); }
@@ -69,6 +74,7 @@ ASIDE.doc-sidebar {
 		font: @h2-font-weight @h2-font-size e('/')@h2-line-height @h2-font; /* Escape function */
 		padding-top: 0;
 		padding-bottom: 22em/21; }
+	
 	A:last-child:after {
 		.bg-img();
 		background-position: -400px 0;
@@ -78,9 +84,8 @@ ASIDE.doc-sidebar {
 		margin: -1px 0 0 .4em;
 		vertical-align: middle;
 		height: 16px;
-		width: 16px;
+		width: 16px; }
 		}
-	}
 	}
 
 /*	**************************************************

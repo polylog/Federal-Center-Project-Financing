@@ -66,6 +66,8 @@ H1 {
 	padding-top: 31em/@h1;
 	padding-bottom: 15em/@h1; }
 	
+	.doc-main > H1 { text-align: center; }
+	
 	H1 + P:not([class]), HGROUP + P:not([class]), .doc-main > HEADER + P:not([class]), P.lead { font-weight: bold; }
 
 H2 {
@@ -76,6 +78,10 @@ H2 {
 H3, .h3, H4, .h4 { font-size: 100%; }
 
 H4, .h4 { color: @green; }
+
+HEADER, HGROUP {
+	position: relative;
+	*zoom: 1; }
 
 HGROUP, .doc-main > HEADER, P { margin: 0 0 @baseline; }
 

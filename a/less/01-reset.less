@@ -25,7 +25,8 @@ HTML {
 	font-size: 100%;
 	-webkit-overflow-scrolling: touch;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;	}
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased; }
 
 HTML, BODY { height: 100%; }
 
@@ -42,9 +43,7 @@ A:hover, A:active { outline: 0; }
 
 A[href^="#"], A[href^="javascript:"] { -webkit-touch-callout: none; }
 
-H1, H2 {
-	-webkit-font-smoothing: antialiased;
-	letter-spacing: -.04em; }
+H1, H2 { letter-spacing: -.04em; }
 
 SUB, SUP {
 	font-size: 75%;
@@ -67,9 +66,9 @@ IMG {
 	display: block;
 	-ms-interpolation-mode: bicubic;
 	vertical-align: middle;
-	height: auto; /* Part 2: Scale the height according to the width, otherwise you get stretching */
+	height: auto; /*	Part 2: Scale the height according to the width, otherwise you get stretching */
 	max-width: 100%;
-	width: auto\9; /* IE7-8 need help adjusting responsive images */ }
+	width: auto\9; /*	IE7-8 need help adjusting responsive images */ }
 
 /*	Prevent max-width from affecting Google Maps */
 #map_canvas IMG { max-width: none; }
@@ -82,7 +81,7 @@ IMG {
 BUTTON, INPUT, SELECT, TEXTAREA { font-size: 100%; }
 
 BUTTON, .btn, INPUT {
-	line-height: normal; /* FF3/4 have !important on line-height in UA stylesheet */
+	line-height: normal; /*	FF3/4 have !important on line-height in UA stylesheet */
 	*overflow: visible; } /*	Inner spacing ie IE6/7 */
 	
 	TABLE INPUT { *overflow: auto; }
@@ -107,7 +106,7 @@ INPUT[type="search"]::-webkit-search-decoration, INPUT[type="search"]::-webkit-s
 	-webkit-appearance: none; } /*	Inner-padding issues in Chrome OSX, Safari 5 */
 
 TEXTAREA {
-  overflow: auto; /* Remove vertical scrollbar in IE6-9 */
+  overflow: auto; /*	Remove vertical scrollbar in IE6-9 */
   resize: vertical;
   vertical-align: top; } /*	Readability and alignment cross-browser */
 

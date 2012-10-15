@@ -72,6 +72,14 @@ OL.unstyled, UL.unstyled {
 		padding-left: 0; }
 	}
 
+HEADER .m-local {
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0; }
+
 /*	**************************************************
 	
 	!! BL SHIFT !!
@@ -89,4 +97,8 @@ UL { padding-left: 40px; }
 .list-view, .m-local {
 	padding-right: 20px;
 	padding-left: 20px; }
+
+HEADER .m-local {
+	margin-bottom: @baseline-mob;
+	position: static; }
 }

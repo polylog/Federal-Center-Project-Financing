@@ -6,11 +6,10 @@
 	padding: 20px 0 0;
 	margin: 0 0 @baseline;
 	overflow: visible;
-
-	/* Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar */
-	*position: relative;
 	height: 160px;
 	*z-index: 2;
+	
+	.row { margin-bottom: 0; }
 
 	H1 {
 		border-right: @brd-sec;
@@ -20,9 +19,9 @@
 		width: 115px;
 
 		A {
-			.bg-img;
+			.bg-img();
 			background-position: -220px 0;
-			.ir;
+			.ir();
 			height: 73px;
 			width: 115px; }
 	}

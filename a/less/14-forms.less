@@ -48,16 +48,15 @@ FIELDSET {
 LABEL {
 	cursor: pointer;
 	display: block;
-	margin-bottom: 5em/@b; 
+	margin-top: @baseline;
+	margin-bottom: 5em/@b; /* TODO - adjast */
 	
 	B {
-		display: inline; /* Show labels text on big screens */
+		display: inline; /*	Show labels text on big screens */
 		font-weight: normal; }
 	}
-
-.f-lot LABEL { margin-top: @baseline; }
 	
-	.f-lot LABEL.first, .f-lot LABEL:first-child { margin-top: 0 ; }
+	LABEL.first, LABEL:first-child { margin-top: 0 ; }
 
 /*	We have to use few rules, because browsers ignore a rule with an unknown selector. */
 :-moz-placeholder { color: @c-input; } /* Placeholder isn't supported in Firefox 3.6 */
@@ -99,7 +98,7 @@ INPUT, TEXTAREA {
 	==================================================	*/
 
 .rb, .cbx { /* Labels-containers */
-	margin-bottom: .25em; /* Maybe it's need only for .f-lot */
+	margin-bottom: .25em;
 	padding-left: 18px;
 	position: relative;
 	*zoom: 1; }
@@ -169,60 +168,58 @@ SELECT[multiple], SELECT[size] { height: auto; }
 	width: 44%; }
 
 /*	==================================================
-	Grouping
+	Layout: standart (labels-on-left, .f class),
+	inline and  forms
 	==================================================	*/
 
-FORM .group { margin-bottom: 9em/@b; }
+/* Grouping */
+
+FORM .group { margin-bottom: @baseline / 2; }
 
 LEGEND + .group {
-	margin-top: 18em/@b;
+	margin-top: @baseline;
 	-webkit-margin-top-collapse: separate; }
 
-.f .group {
-	margin-bottom: 18em/@b;
-	*zoom: 1; }
+.f { /* Labels on left */
+	.group {
+		margin-bottom: @baseline;
+		.clearfix();
+		
+		DIV {
+			*display: inline-block;
+			margin-left: @i-width + 20;
+			*margin-left: 0;
+			*padding-left: 20px;
+			
+			&:first-child {	*padding-left: @i-width + 20; }
+			}
+		}
 
-.f .group:before, .f .group:after {
-	content: '';
-	display: table; }
+	LABEL {
+		float: left;
+		text-align: right;
+		margin-top: 0;
+		padding-top: 13em/@b; /* Top border + top padding of input */
+		width: @i-width; }
 
-.f .group:after { clear: both; }
+	.f-actions { padding-left: @i-width + 20; }
+}
 
-.f LABEL {
-	float: left;
-	width: 140px;
-	padding-top: 5em/@b;
-	text-align: right; }
-
-.f .group DIV {
-	*display: inline-block;
-	margin-left: 160px;
-	*margin-left: 0;
-	*padding-left: 20px; }
-
-.f .group DIV:first-child {	*padding-left: 160px; }
-
-.f .f-actions { padding-left: 160px; }
-
-/*	==================================================
-	Standart (labels-on-left) and inline forms
-	==================================================	*/
+/* Inputs and labels */
 
 INPUT[type="search"], .i-search { margin-bottom: 0; }
 
 .f-inline LABEL { display: inline-block; }
 
-.f-inline INPUT, .f INPUT,
-.f-inline TEXTAREA, .f TEXTAREA,
-.f-inline SELECT, .f SELECT,
-.f-inline .help, .f .help
-/*, .f-inline .i-uneditable, .f .i-uneditable,
-.f-inline .i-append, .f .i-append,
-.f-inline .i-prepend, .f .i-prepend */ {
-	display: inline-block;
-	*display: inline;
-	margin-bottom: 0;
-	*zoom: 1; }
+.f, .f-inline {
+INPUT, TEXTAREA, SELECT, .help
+/*, .i-uneditable, .i-append, .i-prepend */ {
+	.inline-block();
+	margin-bottom: 0; }
+  
+	/* Re-hide hidden elements */
+	.hide { display: none; }
+}
 	
 .f-inline .cbx, .f-inline .rb {
 	margin-bottom: 0;
@@ -475,9 +472,11 @@ INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA, .txt INPUT {
 
 /*	Grouping ---------- */
 
-FORM .group { margin-bottom: 9em/@bm; }
+FORM .group { margin-bottom: @baseline / 2; }
 
-LEGEND + .group { margin-top: 18em/@bm; }
+LEGEND + .group {
+	margin-top: @baseline;
+	-webkit-margin-top-collapse: separate; }
 
 .f .group { margin-bottom: 18em/@bm; }
 
