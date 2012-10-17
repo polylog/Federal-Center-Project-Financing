@@ -180,22 +180,22 @@
 	A {
 		padding: 5px 10px;
 		position: relative;
-		*zoom: 1;
+		.pseudo-after();
 	
 	/* Hover state */
 	&:hover, &:focus { background: @c-sm-link-hover-bg; }
 	
-	&:hover:after, &:focus:after { /* Bevelled angles */
-	content: '';
-	display: block;
-	border-bottom: 12px solid @c-sm-bg;
-	border-left: 12px solid transparent;
-	font-size: 0;
-	line-height: 0;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: 0; }
+	&:hover:after, &:hover .after, &:focus:after { /* Bevelled angles */
+		content: '';
+		display: block;
+		border-bottom: 12px solid @c-sm-bg;
+		border-left: 12px solid transparent;
+		font-size: 0;
+		line-height: 0;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 0; }
 	}
 	
 	/* Active state */

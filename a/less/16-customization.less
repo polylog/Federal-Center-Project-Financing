@@ -22,12 +22,15 @@
 		
 		UL { padding-left: 0; }
 		
-		P:after, UL LI:last-child:after {
+		P { .pseudo-after(); }
+		
+		P:after, P .after, UL LI:last-child:after {
 			.bg-img();
 			background-position: -400px 0;
 			.ir();
 			content: '';
 			.inline-block();
+			line-height: 0;
 			margin: -1px 0 0 .4em;
 			vertical-align: middle;
 			height: 16px;
@@ -115,7 +118,7 @@
 			width: 100%;
 			*width: 480px; }
 		
-		DIV {
+		.slide {
 			.box-sizing(border-box);
 			top: 66px;
 			min-height: 194px;
@@ -130,9 +133,7 @@
 			UL {
 				list-style-image: url(/a/img/b-on-blue.gif);
 				padding: 0; }	
-			}
-			
-			
+			}		
 					
 		.tsr-comecon { background: url(/a/img/teasers/comecon.jpg) no-repeat;}
 		.tsr-birdview { background: url(/a/img/teasers/moscow-birdview.jpg) no-repeat;}

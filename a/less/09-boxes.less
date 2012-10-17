@@ -23,6 +23,8 @@ BLOCKQUOTE {
 	
 	P { padding: 0}
 	
+	.byline { .pseudo-before(); }
+	
 	.byline:before { content: '\2014 \00A0'; }
 	}
 
@@ -35,7 +37,7 @@ BLOCKQUOTE {
 	margin: 29em/@b 0 45em/@b; /* 29px 0 45px */
 	padding-bottom: 1em;
 	position: relative;
-	*zoom: 1;
+	.pseudo-after();
 
 	HEADER { 
 		#gradient > .vertical-three-colors(#FCF7F4, #F3E4E1, 76%, #F7EBE8);
@@ -54,14 +56,15 @@ BLOCKQUOTE {
 			text-transform: uppercase;
 			padding-right: 5px;
 			position: relative;
-			*zoom: 1;
+			.pseudo-after();
 			
-			&:after { /* Bullet */
+			&:after, .after { /* Bullet */
 				background: #f7ece9;
 				border: 1px solid rgba(0,0,0,.08);
 				.box-shadow(inset 0 1px 0 rgba(255,255,255,.4));
 				content: '';
 				display: block;
+				line-height: 0;
 				position: absolute;
 				top: 3em/10;
 				right: -10px;
@@ -74,11 +77,12 @@ BLOCKQUOTE {
 	
 	DL, P { padding-left: 19px; }
 	
-	&:after { /* Angled border */
+	&:after, .after { /* Angled border */
 		.bg-img();
 		background-position: -430px 0;
 		.ir();
 		content:'';
+		line-height: 0;
 		position: absolute;
 		bottom: -1px;
 		right: -1px;
@@ -107,7 +111,8 @@ BLOCKQUOTE {
 	margin-bottom: @baseline;
 	padding-bottom: @baseline;
 	
-	A { color: #194059;
+	A {
+		color: #194059;
 	
 		&:hover {
 			color: darken(#194059, 12%);
@@ -118,7 +123,7 @@ BLOCKQUOTE {
 			}
 	 	}
 	
-	&:after { /* Angled border */
+	&:after, .after { /* Angled border */
 		content: '';
 		display: block;
 		border-bottom: 12px solid @bg;

@@ -22,7 +22,7 @@ NAV.doc-sidebar {
 		padding: 5px 10px;
 		position: relative;
 		width: 100%;
-		*zoom: 1;
+		.pseudo-after();
 		
 		&:visited { color: @c-txt; }
 		
@@ -31,7 +31,7 @@ NAV.doc-sidebar {
 		background: @c-sm-link-hover-bg !important;
 		text-decoration: none;
 		
-			&:after { /* Bevelled angles */
+			&:after, .after { /* Bevelled angles */
 			content: '';
 			display: block;
 			border-bottom: 12px solid @bg;
@@ -59,10 +59,12 @@ ASIDE.doc-sidebar {
 		H3 {
 			color: #FFF;
 			text-shadow: none;
+			.pseudo-after();
 			
-			&:after { /* Bullet - See 09-boxes.css */
+			&:after, .after { /* Bullet - See 09-boxes.css */
 				background: #4c96b7;
 				border: 1px solid rgba(0,0,0,.16);
+				*border-color: darken(#4c96b7, 12%);
 				.box-shadow(inset 0 1px 0 rgba(255,255,255,.12)); }
 			}
 	}

@@ -1,6 +1,8 @@
-/*	==================================================
-	Selected
-	==================================================	*/
+/*	**************************************************
+	
+	SELECTED
+	
+	**************************************************	*/
 
 .bg-img(@bg-image: url(/a/img/base-graphics.png)) { background: transparent @bg-image no-repeat; }
 /*	.alt { .bg-img(url(/a/img/alt.png));} */
@@ -62,12 +64,6 @@
 	letter-spacing: -.04em;
 	text-rendering: optimizelegibility; }
 
-/*	IE7 compatible inline-block */
-.inline-block() {
-	display: inline-block;
-	*display: inline; /* IE7 inline-block hack */
-	*zoom: 1; }
-
 .size(@height, @width) {
 	height: @height;
 	width: @width; }
@@ -79,6 +75,33 @@
 	-moz-transition: @transition;
 	-o-transition: @transition;
 	transition: @transition; }
+
+/*	==================================================
+	Internet explorer's cures
+	==================================================	*/
+
+.pseudo-after() { *zoom: ~'expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span") ).className="after")'; }
+
+.pseudo-before() { *zoom: ~'expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span") ).className="before")'; }
+
+.inline-block() {
+	display: inline-block;
+	*display: inline; /*	IE7 inline-block hack */
+	*zoom: 1; }
+
+/*	IE7 likes to collapse whitespace on either side of the inline-block elements.
+	Left version is for form buttons, which typically come after other elements, and
+	right version is for icons, which come before. */
+.ie7-restore-left-whitespace() {
+  *margin-left: .3em;
+
+  &:first-child {
+    *margin-left: 0;
+  }
+}
+
+.ie7-restore-right-whitespace() {
+  *margin-right: .3em; }
 
 /*	**************************************************
 	
@@ -120,32 +143,7 @@
 	BACKGROUNDS
 	
 	**************************************************	*/
-
-/*	Buttons and alerts gradients */
-.gradient-linear(@primary-color, @secondary-color, @text-color: #FFF, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
-	color: @text-color;
-	text-shadow: @text-shadow;
-	#gradient > .vertical(@primary-color, @secondary-color);
-	border-color: @secondary-color @secondary-color darken(@secondary-color, 15%);
-	border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%); }
-
-/*	Button backgrounds */
-.button-bg(@start-color, @end-color, @text-color: #FFF, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
-	/* gradient-linear will set the background to a pleasing blend of these, to support IE<=9 */
-	.gradient-linear(@start-color, @end-color, @text-color, @text-shadow);
-	*background-color: @end-color; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-	.reset-filter();
-
-	/* in these cases the gradient won't cover the background, so we override */
-	&:hover, &:active, &.active, &.disabled, &[disabled] {
-	color: @text-color;
-	background-color: @end-color;
-	*background-color: darken(@end-color, 5%); }
-
-	/* IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves */
-	&:active, &.active { background-color: darken(@end-color, 10%) e('\9'); }
-}
-
+/* #gradient > .vertical(#fff, #000); */
 /*	Gradients */
 #gradient {
 	.vertical(@start-color: #555, @end-color: #333) {
@@ -203,6 +201,31 @@
 		background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); }
 }
 
+/*	Buttons and alerts gradients */
+.gradient-linear(@primary-color, @secondary-color, @text-color: #FFF, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
+	color: @text-color;
+	text-shadow: @text-shadow;
+	#gradient > .vertical(@primary-color, @secondary-color);
+	border-color: @secondary-color @secondary-color darken(@secondary-color, 15%);
+	border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%); }
+
+/*	Button backgrounds */
+.button-bg(@start-color, @end-color, @text-color: #FFF, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
+	/* gradient-linear will set the background to a pleasing blend of these, to support IE<=9 */
+	.gradient-linear(@start-color, @end-color, @text-color, @text-shadow);
+	*background-color: @end-color; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+	.reset-filter();
+
+	/* in these cases the gradient won't cover the background, so we override */
+	&:hover, &:active, &.active, &.disabled, &[disabled] {
+	color: @text-color;
+	background-color: @end-color;
+	*background-color: darken(@end-color, 5%); }
+
+	/* IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves */
+	&:active, &.active { background-color: darken(@end-color, 10%) e('\9'); }
+}
+
 /*	Reset filters for IE */
 .reset-filter() { filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)")); }
 
@@ -227,20 +250,6 @@
 	outline: 5px auto -webkit-focus-ring-color; /* Webkit */
 	outline-offset: -2px; }
 
-/*	IE7 likes to collapse whitespace on either side of the inline-block elements.
-	Left version is for form buttons, which typically come after other elements, and
-	right version is for icons, which come before. */
-.ie7-restore-left-whitespace() {
-  *margin-left: .3em;
-
-  &:first-child {
-    *margin-left: 0;
-  }
-}
-
-.ie7-restore-right-whitespace() {
-  *margin-right: .3em; }
-
 /*	Center-align a block level element */
 .center-block() {
   display: block;
@@ -252,7 +261,6 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden; }
-
 
 /*	**************************************************
 	
@@ -302,7 +310,6 @@
 	color: @c-nt;
   }
 }
-
 
 /*	**************************************************
 	
@@ -401,168 +408,3 @@
 .resizable(@direction) {
 	resize: @direction; /* Options: horizontal, vertical, both */
 	overflow: auto; /* Safari fix */ }
-
-/*	**************************************************
-	
-	COMPONENT MIXINS
-	
-	**************************************************	*/
-
-/*	Horizontal dividers
-	Dividers (basically an hr) within dropdowns and nav lists */
-.nav-divider(@top: @c-brd, @bottom: @bg) {
-	/* IE7 needs a set width since we gave a height. Restricting just
-		to IE7 to keep the 1px left/right space in other browsers.
-		It is unclear where IE is getting the extra space that we need
-		to negative-margin away, but so it goes. */
-	background-color: @top;
-	border-bottom: 1px solid @bottom;
-	margin: ((@baseline / 2) - 1/@b) 1px (@baseline / 2); /* One empty line */
-	*margin: -5px 0 5px;
-	overflow: hidden;
-	height: 1px;
-	*width: 100%; }
-
-
-/*	**************************************************
-	
-	GRID SYSTEM
-	
-	**************************************************	*/
-
-/*	Centered container element */
-.container-fixed() {
-	margin-right: auto;
-	margin-left: auto;
-	.clearfix(); }
-
-/*	Table columns */
-.table-cols(@columnSpan: 1) {
-	.box-sizing(border-box);
-	float: none; /* undo default grid column styles */ }
-
-/*	Make a Grid
-	Use .make-row and .make-column to assign semantic layouts grid system behavior*/
-.make-row() { .clearfix(); }
-
-.make-column(@columns: 1, @offset: 0) {
-	.box-sizing(border-box);
-	float: left;
-	padding: @col-padding;
-	min-height: 1px; /* prevent collapsing columns */ }
-
-/*	The Grid */
-#grid {
-
-  .core (@grid-column-width, @grid-gutter-width) {
-
-    .spanX (@index) when (@index > 0) {
-      (~".span@{index}") { .span(@index); }
-      .spanX(@index - 1);
-    }
-    
-	.spanX (0) {}
-
-    .offsetX (@index) when (@index > 0) {
-      (~".offset@{index}") { .offset(@index); }
-      .offsetX(@index - 1);
-    }
-    
-	.offsetX (0) {}
-
-    .offset (@columns) { margin-left: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns + 1)); }
-
-    .span (@columns) { width: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1)); }
-
-    .row {
-      margin-left: @grid-gutter-width * -1;
-      .clearfix(); }
-
-    [class*="span"] {
-		.box-sizing(border-box);
-		float: left;
-		padding: @col-padding;
-		min-height: 1px; /* prevent collapsing columns */ }
-
-    /*	Set the container width, and override it for fixed navbars in media queries */
-    .container,
-    .navbar-static-top .container,
-    .navbar-fixed-top .container,
-    .navbar-fixed-bottom .container { .span(@gridColumns); }
-
-    /*	generate .spanX and .offsetX */
-    .spanX (@gridColumns);
-    .offsetX (@gridColumns);
-
-  }
-
-  .fluid (@fluid-grid-column-width, @fluid-grid-gutter-width) {
-
-    .spanX (@index) when (@index > 0) {
-      (~".span@{index}") { .span(@index); }
-      .spanX(@index - 1);
-    }
-    
-	.spanX (0) {}
-
-    .offsetX (@index) when (@index > 0) {
-      (~'.offset@{index}') { .offset(@index); }
-      (~'.offset@{index}:first-child') { .offsetFirstChild(@index); }
-      .offsetX(@index - 1);
-    }
-    
-	.offsetX (0) {}
-
-    .offset (@columns) {
-      margin-left: (@fluid-grid-column-width * @columns) + (@fluid-grid-gutter-width * (@columns - 1)) + (@fluid-grid-gutter-width*2);
-  	  *margin-left: (@fluid-grid-column-width * @columns) + (@fluid-grid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%) + (@fluid-grid-gutter-width*2) - (.5 / @grid-row-width * 100 * 1%); }
-
-    .offsetFirstChild (@columns) {
-      margin-left: (@fluid-grid-column-width * @columns) + (@fluid-grid-gutter-width * (@columns - 1)) + (@fluid-grid-gutter-width);
-      *margin-left: (@fluid-grid-column-width * @columns) + (@fluid-grid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%) + @fluid-grid-gutter-width - (.5 / @grid-row-width * 100 * 1%); }
-
-    .span (@columns) {
-      width: (@fluid-grid-column-width * @columns) + (@fluid-grid-gutter-width * (@columns - 1));
-      *width: (@fluid-grid-column-width * @columns) + (@fluid-grid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%); }
-
-    .row-fluid {
-      .clearfix();
-      [class*="span"] {
-        .input-block-level();
-        float: left;
-        margin-left: @fluid-grid-gutter-width;
-        *margin-left: @fluid-grid-gutter-width - (.5 / @grid-row-width * 100 * 1%);
-		      width: 100%;
-      }
-
-      // generate .spanX and .offsetX
-      .spanX (@gridColumns);
-      .offsetX (@gridColumns);
-    }
-
-  }
-
-  .input(@grid-column-width, @grid-gutter-width) {
-
-    .spanX (@index) when (@index > 0) {
-      (~"input.span@{index}, textarea.span@{index}, .uneditable-input.span@{index}") { .span(@index); }
-      .spanX(@index - 1);
-    }
-	
-    .spanX (0) {}
-
-    .span(@columns) {
-      width: ((@grid-column-width) * @columns) + (@grid-gutter-width * (@columns - 1)) - 14;
-    }
-
-    INPUT, TEXTAREA, .uneditable-input { margin-left: 0; /* override margin-left from core grid system */ }
-
-    /*	Space grid-sized controls properly if multiple per line */
-    .controls-row [class*="span"] + [class*="span"] { margin-left: @grid-gutter-width; }
-
-    /*	generate .spanX */
-    .spanX (@gridColumns);
-
-  }
-
-}

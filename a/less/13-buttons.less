@@ -145,12 +145,15 @@ BUTTON + BUTTON, .btn + .btn { margin-top: 10px; }
 .btn-option, .btn-search { right: 10px; }
 
 /*	Buttons with icons */
-.btn-menu, .btn-search { .ir();
+.btn-menu, .btn-search {
+	.ir();
+	.pseudo-before();
 
-	&:before { /* Buttons icons */
+	&:before, .before { /* Buttons icons */
 		.bg-img();
 		content: '';
 		display: block;
+		line-height: 0;
 		position: absolute;
 		top: 0;
 		left: 6px;
@@ -158,6 +161,6 @@ BUTTON + BUTTON, .btn + .btn { margin-top: 10px; }
 		width: 30px; }
 	}
 	
-	.btn-menu:before { background-position: -120px 0; }
-	.btn-search:before { background-position: -160px 0; }
+	.btn-menu:before, .btn-menu .before { background-position: -120px 0; }
+	.btn-search:before, .btn-search .before { background-position: -160px 0; }
 }
