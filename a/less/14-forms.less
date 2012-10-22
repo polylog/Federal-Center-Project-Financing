@@ -56,6 +56,7 @@ LABEL {
 :-moz-placeholder { color: @c-input; } /* Placeholder isn't supported in Firefox 3.6 */
 :-ms-input-placeholder { color: @c-input; }
 ::-webkit-input-placeholder { color: @c-input; }
+.placeholder { color: @c-input; }
 
 /*	==================================================
 	Text inputs and textareas
@@ -73,10 +74,11 @@ INPUT.txt, /*.i-uneditable, */ SELECT, TEXTAREA {
 
 INPUT[type="text"], INPUT.txt, .txt INPUT, TEXTAREA {
 	padding: 6px 7px 7px;
-	outline: none; }
+	outline: none !important; }
 
 INPUT, TEXTAREA {
 	.box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+	outline: none;
 	.transition(~'border linear .2s, box-shadow linear .2s');
 	
 	 /* Focus state */
@@ -249,21 +251,23 @@ INPUT, TEXTAREA, SELECT, .help
 	*zoom: 1;
 
 	BUTTON {
-	.bg-img();
-	background-position: -350px 0;
-	.ir();
-	border: 0;
-	.border-radius(0);
-	.box-shadow(none);
-	display: block;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	top: 13px;
-	right: 9px;
-	height: 30px;
-	width: 30px; }
-	}
+		.bg-img();
+		background-position: -350px 0;
+		.reset-filter();
+		.ir();
+		border: 0;
+		.border-radius(0);
+		.box-shadow(none);
+		display: block;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 13px;
+		right: 9px;
+		*right: 19px;
+		height: 30px;
+		width: 30px; }
+}
 
 .i-search {
 	background: @c-input;
@@ -280,7 +284,6 @@ INPUT, TEXTAREA, SELECT, .help
 
 .i-search:-moz-placeholder { /* Placeholder isn't supported in Firefox 3.6 */
 	color: @c-nt;
-	font-family: @h1-font;
 	font-size: 10px;
 	text-transform: uppercase;
 	padding-top: 4px; }
@@ -290,7 +293,6 @@ INPUT, TEXTAREA, SELECT, .help
 
 .i-search:-ms-input-placeholder {
 	color: @c-nt;
-	font-family: @h1-font;
 	font-size: 10px;
 	text-transform: uppercase;
 	padding-top: 4px; }
@@ -300,13 +302,20 @@ INPUT, TEXTAREA, SELECT, .help
 
 .i-search::-webkit-input-placeholder {
 	color: @c-nt;
-	font-family: @h1-font;
 	font-size: 10px;
 	text-transform: uppercase;
 	padding-top: 4px; }
+
 .i-search:focus::-webkit-input-placeholder {
 	color: lighten(@c-nt, 20%);
 	-webkit-transition: color 0.1s linear; }
+
+.f-search .placeholder {
+	color: @c-nt;
+	font-size: 10px;
+	text-transform: uppercase;
+	padding-top: 11px; }
+
 
 /*	==================================================
 	Non text and textarea inputs states

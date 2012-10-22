@@ -17,7 +17,7 @@
 @h1:													34;
 @h1-font-size:		        		261.5%; /* 34px */
 @h1-line-height:		    			1.17647059; /* 40px */
-@h1-font:											'FreeSet Normal', Tahoma, Geneva, sans-serif;
+@h1-font:											'FreeSet Bold', Tahoma, Geneva, sans-serif;
 @h1-font-weight:							normal;
 @h1-color:										#000;
 
@@ -49,7 +49,7 @@
 		Color scheme
 		==================================================	*/
 
-@c-txt:	             					#585853; /* Body text color */
+@c-txt:	             					#4c4c4c; /* Body text color */
 
 @bg:													#FFFFFA; /* Background */
 @bg-body:											@bg;
@@ -59,13 +59,15 @@
 @c-tr:												#F7F7F2; /* even table rows, boxes etc */
 @c-th: 	           						#F0F0EB; /* theads — darker then on @bg-dkr-1 3–4% */
 @c-brd:												#E7E7E2; /* lines, borders, hrs */
-@c-nt:												#B9B9B4; /* notes, time, .byline etc */
+@c-nt:												#909090; /* notes, time, .byline etc */
 
-@c-link:                			#268CB2;
+@c-link:                			#0d7399;
 @c-link-hover:             		darken(@c-link, 16%);
 @c-link-visited:            	#8C008C;
 @green:                 			#268C26;
 @red:                   			#B22626;
+
+@c-selection:									@c-link;
 
 @c-clear-close:								#ABAEB2;
 
@@ -93,8 +95,8 @@
 		Main menu (mm), drop-downs/submenus (sm) and slide-out (so)
 		==================================================	*/
 
-@c-mm-link:										#9D8582;
-@c-sm-link:										#9D8582;
+@c-mm-link:										lighten(@c-txt, 24%);
+@c-sm-link:										lighten(@c-txt, 24%);
 @c-sm-link-hover:							@c-txt;
 @c-so-link:										#FFFFFF;
 @c-so-link-hover:							#FFFFFF;

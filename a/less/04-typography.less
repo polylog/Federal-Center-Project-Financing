@@ -12,6 +12,16 @@
          url('/a/type/fs.svg#FreesetNormal') format('svg'); /* Legacy iOS */
     font-weight: normal;
     font-style: normal; }
+	
+@font-face {
+    font-family: 'Freeset Bold';
+    src: url('/a/type/fsb.eot');  /* IE9 Compat Modes */
+    src: url('/a/type/fsb.eot?#iefix') format('embedded-opentype'),  /* IE6-IE8 */
+         url('/a/type/fsb.woff') format('woff'), /* Modern Browsers */
+         url('/a/type/fsb.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/a/type/fsb.svg#FreesetNormal') format('svg'); /* Legacy iOS */
+    font-weight: bold;
+    font-style: normal; }
 
 /*	==================================================
 	Links
@@ -101,12 +111,12 @@ HR {
 SMALL {	font-size: 81.3%; }
 
 ::-moz-selection {
-	background: #F66;
+	background: @c-selection;
 	color: #FFF;
 	text-shadow: none; }
 
 ::selection {
-	background: #F66;
+	background: @c-selection;
 	color: #FFF;
 	text-shadow: none; }
 	
