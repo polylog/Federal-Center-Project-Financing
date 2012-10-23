@@ -2,9 +2,12 @@
 @import '02-mixins.less';
 
 .doc-sidebar {
-	color: #8e8c86;
+	color: @c-txt;
 	float: left;
-	margin-top: @baseline;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11/@b*100%;
+	line-height: 16em/11;
+	margin-top: 20em/11;
 	width: @sidebar;
 	
 	.box { margin-top: 0; }
@@ -15,11 +18,16 @@ NAV.doc-sidebar {
 	
 	.box UL { padding: 0 9px; }
 	
+	.box HEADER { margin-bottom: 10em/11; }
+	
+	H3 { font-size: 10/11*100%; }
+	
 	A {
 		.box-sizing(border-box);
 		color: @c-txt;
 		display: block;
-		padding: 5px 10px;
+		margin-top: 1px;
+		padding: 7px 10px 6px;
 		position: relative;
 		width: 100%;
 		.pseudo-after();
@@ -27,7 +35,7 @@ NAV.doc-sidebar {
 		&:visited { color: @c-txt; }
 		
 		&.active, &:hover, &:focus {
-		color: #8E8C86;
+		color: @c-txt;
 		background: @c-sm-link-hover-bg !important;
 		text-decoration: none;
 		
@@ -54,10 +62,12 @@ ASIDE.doc-sidebar {
 	.box {
 		HEADER { 
 			#gradient > .vertical-three-colors(#40a6cc, #1980a6, 76%, #3399bf);
-			border-top: 1px solid #5fb4d4; }
+			border-top: 1px solid #5fb4d4;
+			margin-bottom: 17em/11; /* Fine-tuning */ }
 		
 		H3 {
 			color: #FFF;
+			font-size: 10/11*100%; /* 10px */
 			text-shadow: none;
 			.pseudo-after();
 			
@@ -70,23 +80,26 @@ ASIDE.doc-sidebar {
 	}
 	
 	
-	.open-space { padding: 0 20px;
-	H3 {
-		color: #000;
-		font: @h2-font-weight @h2-font-size e('/')@h2-line-height @h2-font; /* Escape function */
-		padding-top: 0;
-		padding-bottom: 22em/21; }
-	
-	A:last-child:after {
-		.bg-img();
-		background-position: -400px 0;
-		.ir();
-		content: '';
-		.inline-block();
-		margin: -1px 0 0 .4em;
-		vertical-align: middle;
-		height: 16px;
-		width: 16px; }
+		.open-space { padding: 0 20px;
+		
+			H3 {
+				color: #000;
+				font-family: @h2-font;
+				font-size: 21/11*100%;
+				line-height: 32em/21;
+				padding-top: 0;
+				padding-bottom: 0; }
+			
+			A:last-child:after {
+				.bg-img();
+				background-position: -400px 0;
+				.ir();
+				content: '';
+				.inline-block();
+				margin: -1px 0 0 .4em;
+				vertical-align: middle;
+				height: 16px;
+				width: 16px; }
 		}
 	}
 

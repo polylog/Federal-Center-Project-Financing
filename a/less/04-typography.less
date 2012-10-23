@@ -72,16 +72,18 @@ H1, H2, H3, H4 {
 
 H1 {
 	color: @h1-color;
-	font: @h1-font-weight @h1-font-size e('/')@h1-line-height @h1-font; /* Escape function */
+	font: @h1-font-weight @h1-font-size @h1-font; 
+	line-height: @h1-line-height; /* Shortcut rule causes bugs in old IEs */
 	padding-top: 31em/@h1;
 	padding-bottom: 15em/@h1; }
 	
-	.doc-main > H1 { text-align: center; }
+	SECTION.doc-main > H1 { text-align: center; }
 	
 	H1 + P:not([class]), HGROUP + P:not([class]), .doc-main > HEADER + P:not([class]), P.lead { font-weight: bold; }
 
 H2 {
-	font: @h2-font-weight @h2-font-size e('/')@h2-line-height @h2-font; /* Escape function */
+	font: @h2-font-weight @h2-font-size @h2-font;
+	line-height: @h2-line-height; /* Shortcut rule causes bugs in old IEs */
 	padding-top: 20em/@h2; /* 20px */
 	padding-bottom: 4em/@h2; /* 4px */ }
 

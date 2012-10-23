@@ -29,8 +29,8 @@ BLOCKQUOTE {
 	}
 
 /*	==================================================
-	General boxes
-	==================================================	*/
+		General boxes
+		==================================================	*/
 
 .box {
 	border: @brd;
@@ -42,16 +42,15 @@ BLOCKQUOTE {
 	HEADER { 
 		#gradient > .vertical-three-colors(#FCF7F4, #F3E4E1, 76%, #F7EBE8);
 		border-top: 1px solid #FEFDFC;
-		margin-bottom: (16em/@b);
+		margin-bottom: @baseline;
 		padding: 25px 19px 0;
 		min-height: 23px;
 		*height: 23px;
 		
 		H3 {
 			color: #A58180;
-			font-family: @h1-font;
 			font-size: 76.9%; /* 10px */
-			font-weight: 400;
+			font-weight: normal;
 			text-shadow: 0 1px 0 rgba(255,255,255,1);
 			text-transform: uppercase;
 			padding-right: 5px;
@@ -104,16 +103,18 @@ BLOCKQUOTE {
 	}
 
 .tsr {
-	#gradient > .vertical-three-colors(#99bfd9, #7399b2, 76%, #8cb2cc);
-	*background: #99BFD9 url(/a/img/teasers/bg-mute-blue.png) no-repeat right bottom;
+	#gradient > .vertical-three-colors(#a6cce5, #80a6bf, 76%, #99bfd9);
+	filter: ~'progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#FFa6cce5, EndColorStr=#FF80a6bf, GradientType=0)'; /*	Filter in three-colors mixin don't work in  */
 	color: #194059;
 	text-shadow:  0 1px 0 rgba(255,255,255,.44);
+	margin-top: @baseline/2;
 	margin-bottom: @baseline;
+	padding-top: @baseline/2;
 	padding-bottom: @baseline;
 	
 	A {
 		color: #194059;
-	
+			
 		&:hover {
 			color: darken(#194059, 12%);
 			text-decoration: none;
@@ -216,7 +217,9 @@ BLOCKQUOTE {
 }
 
 .tsr {
+	margin-top: 0;
 	margin-bottom: @baseline-mob;
+	padding-top: 0;
 	padding-bottom: @baseline-mob;
 	height: auto !important; }
   
