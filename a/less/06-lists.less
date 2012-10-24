@@ -48,7 +48,7 @@ OL.unstyled, UL.unstyled {
 	 
 	 }
 	 
-.list-view {
+.list-view, .search-res {
 	list-style: none;
 	list-style-image: none;
 	padding: 0;
@@ -95,9 +95,14 @@ DL, OL, UL { padding-left: 20px; }
 
 UL { padding-left: 40px; }
 
-.list-view, .m-local {
+.list-view, .m-local, .search-res {
 	padding-right: 20px;
-	padding-left: 20px; }
+	padding-left: 20px;
+	
+	H3, P {
+		padding-left: 0;
+		padding-right: 0; }
+}
 
 HEADER .m-local {
 	margin-bottom: @baseline-mob;
