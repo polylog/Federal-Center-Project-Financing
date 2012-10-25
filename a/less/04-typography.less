@@ -80,6 +80,14 @@ H1 {
 	SECTION.doc-main > H1 { text-align: center; }
 	
 	H1 + P:not([class]), HGROUP + P:not([class]), .doc-main > HEADER + P:not([class]), P.lead { font-weight: bold; }
+	
+	H1.mini { margin-top: @baseline/@h2; }
+
+	H1.mini {
+	font: @h2-font-weight @h2-font-size @h2-font;
+	line-height: @h2-line-height; /* Shortcut rule causes bugs in old IEs */
+	padding-top: 44em/@h2; /* 20px */
+	padding-bottom: 4em/@h2; /* 4px */ }
 
 H2 {
 	font: @h2-font-weight @h2-font-size @h2-font;
@@ -141,7 +149,7 @@ H1, H2, H3, H4, .doc-main HEADER SMALL, P {
 	padding-right: 20px;
 	padding-left: 20px; }
 
-H1 {
+H1, H1.mini {
 	font-size: @h1-font-size-mob;
 	line-height: @h1-line-height-mob;
 	padding-top: 11em/@h1m;

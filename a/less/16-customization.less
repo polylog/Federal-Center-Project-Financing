@@ -103,6 +103,7 @@
 		text-decoration: none;
 		position: relative;
 		overflow: ~'hidden\0/';
+		*overflow-x: hidden;
 		width: 48.9795918%;
 		*width: 48.877551%;
 		*zoom: 1;
@@ -120,22 +121,25 @@
 		H2, DIV {
 			position: absolute;
 			right: 0;
-			left: 0;
-			max-width: 480px;
-			*width: 100%;
-			*width: 480px; }
+			left: 0; }
 		
-		.slide {
+		.slide, .alt {
 			.box-sizing(border-box);
 			top: 66px;
+			*top:68px;
 			min-height: 194px;
-			*height: 194px;
+			height: 194px;
+			width: 480px;
 			z-index: 1; }
 		
 		
 		.tsr-txt {
 			background: #40A6CC;
 			padding: 40px 20px 0;
+			height: auto;
+			*height: 194px;
+			-moz-height: 154px;
+			width: auto;			
 			
 			UL {
 				list-style-image: url(/a/img/b-on-blue.gif);
@@ -165,8 +169,6 @@
 }
 
 
-
-
 /*	**************************************************
 	
 	PORTRAIT TABLETS: 768–979px
@@ -174,6 +176,11 @@
 	**************************************************	*/
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
+	
+	#btl .first LI A { font: bold 100% e('/') @baseline @font-sans !important; }
+	
+	#btl .alt { display: block; }
+	#slideshow { display: none; }
 }
 
 /*	**************************************************
@@ -212,8 +219,7 @@
 	
 	UL.first { margin: 0 20px @baseline-mob !important;
 	
-	A { font-size: @h2-font-size-mob !important; }
-	
+		A { font-size: @h2-font-size-mob !important; }
 	}
 		
 	DIV.last, .list-view { padding-top: 0; }
@@ -230,6 +236,9 @@
 			height: auto !important; }
 		.tsr-txt  { padding: 20px !important; }
 		}
+		
+		.alt { display: block; }
 	}
 
+	#slideshow { display: none; }
 }
