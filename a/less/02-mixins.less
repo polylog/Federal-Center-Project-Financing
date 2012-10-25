@@ -7,8 +7,8 @@
 .bg-img(@bg-image: url(/a/img/base-graphics.png)) { background: transparent @bg-image no-repeat; }
 /*	.alt { .bg-img(url(/a/img/alt.png));} */
 
-	.ir() {
-		border: 0;
+	.ir(@border: 0) {
+		border-width: @border;
 		display: block;
 		direction: ltr;
 		text-align: left;
