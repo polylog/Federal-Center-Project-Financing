@@ -12,18 +12,18 @@
 	width: @sidebar;
 	
 	.box { margin-top: 0; }
-	}
-
-NAV.doc-sidebar {
-	.gutter(); /* Margin-left */
-	
-	.box UL { padding: 0 9px; }
-	
-	.box HEADER { margin-bottom: 10em/11; }
 	
 	H3 {
 		font-family: @font-sans;
 		font-size: 10/11*100%; }
+}
+
+NAV.doc-sidebar {
+	.gutter(); /* Margin-left */
+
+	.box UL { padding: 0 9px; }
+
+	.box HEADER { margin-bottom: 10em/11; }
 	
 	A {
 		.box-sizing(border-box);
@@ -34,15 +34,15 @@ NAV.doc-sidebar {
 		position: relative;
 		width: 100%;
 		.pseudo-after();
-		
+	
 		&:visited { color: @c-txt; }
-		
+	
 		&.active, &:hover, &:focus {
-		color: @c-txt;
-		background: @c-sm-link-hover-bg !important;
-		text-decoration: none;
-		
-			&:after, .after { /* Bevelled angles */
+			color: @c-txt;
+			background: @c-sm-link-hover-bg !important;
+			text-decoration: none;
+	
+		&:after, .after { /* Bevelled angles */
 			content: '';
 			display: block;
 			border-bottom: 12px solid @bg;
@@ -54,12 +54,9 @@ NAV.doc-sidebar {
 			right: 0;
 			bottom: 0;
 			width: 0; }
-			}
 		}
-	
-
-	
 	}
+}
 
 ASIDE.doc-sidebar {
 	.box {
@@ -70,9 +67,6 @@ ASIDE.doc-sidebar {
 		
 		H3 {
 			color: #FFF;
-			font-size: 10/11*100%; /* 10px */
-			text-shadow: none;
-			.pseudo-after();
 			
 			&:after, .after { /* Bullet - See 09-boxes.css */
 				background: #4c96b7;
