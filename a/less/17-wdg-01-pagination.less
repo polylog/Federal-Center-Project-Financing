@@ -29,25 +29,6 @@
 
 
 /*	Prev-Next buttons */
-.pagination LI:first-child A, .pagination LI:last-child A {
-	text-indent: -4000em;
-	position: relative; }
-
-.pagination LI.first A { .pseudo-before(); }
-
-.pagination LI.last A { .pseudo-after(); }
-
-.pagination LI:first-child A:before, .pagination LI.first A .before, .pagination LI:last-child A:after, .pagination LI.last A .after {
-	text-indent: 0;
-	position: absolute;
-	top: 0;
-	left: 40%; 
-	width: 1em; }
-
-.pagination LI:first-child A:before, .pagination LI.first A .before { content: '\00ab'; }
-
-.pagination LI:last-child A:after, .pagination LI.last A .after { content: '\00bb'; }
-
 .pagination LI:first-child A, .pagination .first A {
 	border-left-width: 1px;
 	.border-radius(3px 0 0 3px); }
