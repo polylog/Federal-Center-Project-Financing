@@ -6,7 +6,7 @@ a/css/*
 a/less/_stock/
 
 # Auxiliary Files
-*.esproj
+*.sublime-*
 *.zip
 a/img/_grid-bl20.png
 a/img/_grid-bl24.png

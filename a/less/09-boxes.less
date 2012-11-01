@@ -29,8 +29,8 @@ BLOCKQUOTE {
 	}
 
 /*	==================================================
-		General boxes
-		==================================================	*/
+	General boxes
+	==================================================	*/
 
 .box {
 	border: @brd;
@@ -89,7 +89,7 @@ BLOCKQUOTE {
 		right: -1px;
 		height: 12px;
 		width: 12px; }	
-	}
+}
 
 .jumped {
 	margin-bottom: @baseline;
@@ -113,6 +113,8 @@ BLOCKQUOTE {
 	margin-bottom: @baseline;
 	padding-top: @baseline/2;
 	padding-bottom: @baseline;
+	min-height: @baseline * 5.5;
+	*height:  @baseline * 5.5;
 	
 	A {
 		color: #194059;
@@ -223,6 +225,7 @@ BLOCKQUOTE {
 	margin-bottom: @baseline-mob;
 	padding-top: 0;
 	padding-bottom: @baseline-mob;
+	min-height: none !important;
 	height: auto !important; }
   
 }

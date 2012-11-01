@@ -7,7 +7,7 @@
 	margin: 0 0 @baseline;
 	overflow: visible;
 	height: 160px;
-	*z-index: 2;
+	z-index: 2;
 	
 	.row { margin-bottom: 0; }
 
@@ -83,6 +83,7 @@
 	padding: 0;
 	height: 54px;
 	width: 100%;
+	z-index: 2;
 	
 		A {
 			color: @c-sm-link;
@@ -207,7 +208,9 @@
 /* Open */
 
 /* TODO: Delete after attaching JS */
-.doc-header .menu:hover UL { display: block; }
+.doc-header .menu:hover UL {
+	display: block;
+	z-index: @z-dd; }
 
 .open {
 	/*	IE7's z-index only goes to the nearest positioned ancestor, which would
@@ -327,9 +330,9 @@
 		&:hover, &:active {
 			background-color: @c-so-link-hover-light;
 			color: @c-so-link-hover; }
-		}
-
 	}
+
+}
 
 .active { #gradient > .vertical(@c-so-link-hover-darkest, @c-so-link-hover-dark); }
 
