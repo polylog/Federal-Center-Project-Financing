@@ -7,7 +7,7 @@
 #billboard {
 	.clearfix();
 	padding-bottom: 10px;
-	
+
 	.col {
 		border-top: 4px solid #B1B1AC;
 		text-decoration: none;
@@ -17,13 +17,13 @@
 		*height: 252px;
 		width: 320/980*100%;
 		*width: 319/980*100%;
-	
+
 	H2 { padding-bottom: 18px; }
-	
+
 	UL { padding-left: 0; }
-	
+
 	P { .pseudo-after(); }
-	
+
 	P:after, P .after, UL LI:last-child:after {
 		.bg-img();
 		background-position: -400px 0;
@@ -36,22 +36,21 @@
 		height: 16px;
 		width: 16px; }
 	}
-	
+
 	A.first {
 		background: #40A6CC url(/a/img/teasers/bg-blue.png) no-repeat right bottom;
 		color: #FFF;
 		text-shadow:  0 1px 0 rgba(18,104,146,.44);
-		
+
 		UL { list-style-image: url(/a/img/b-on-blue.gif); }
 	}
-	
+
 	A.second, A.last {
-		background: #99BFD9 url(/a/img/teasers/bg-mute-blue.png) no-repeat right bottom;
-		color: #194059;
-		text-shadow:  0 1px 0 rgba(255,255,255,.44);
+		background: #d9effd url(/a/img/teasers/bg-mute-blue.png) no-repeat right bottom;
+		color: #000;
 		margin-left: 1.02040816%;
 		*margin-left: .918367347%;
-		
+
 		UL { list-style-image: url(/a/img/b-on-mute-blue.gif); }
 	}
 }
@@ -68,7 +67,7 @@
 		*margin-right: .918367347%;
 		width: 16.3265306%;
 		*width: 16.2244898%;
-		
+
 		LI { margin-bottom: 10px;
 			A {
 			background: url(/a/img/scratching-widgets.png) no-repeat;
@@ -78,17 +77,17 @@
 			padding: 24px 20px 0;
 			height: 56px; }
 		}
-		
+
 		.first A {
 			background-position: 100% -100px;
 			color: @c-nt;
 			text-shadow: 0 1px 0 rgba(255,255,255,.44); }
-		
+
 		.second A {
 			background-position: 100% -200px;
 			color: #FFF;
 			text-shadow: 0 1px 0 rgba(0,0,0,.16); }
-		
+
 		.last {
 			margin-bottom: 0;
 			A {
@@ -97,7 +96,7 @@
 				text-shadow: 0 1px 0 rgba(0,0,0,.16); }
 		}
 	}
-	
+
 	A.second { /* Slideshow */
 		color: #FFF;
 		text-decoration: none;
@@ -107,7 +106,7 @@
 		width: 48.9795918%;
 		*width: 48.877551%;
 		*zoom: 1;
-		
+
 		H2 {
 			background: url(/a/img/scratching-widgets.png) right top no-repeat;
 			.box-sizing(border-box);
@@ -117,12 +116,12 @@
 			top: 0;
 			height: 80px;
 			z-index: 2; }
-		
+
 		H2, DIV {
 			position: absolute;
 			right: 0;
 			left: 0; }
-		
+
 		.slide, .alt {
 			.box-sizing(border-box);
 			top: 66px;
@@ -131,38 +130,38 @@
 			*height: 194px;
 			width: 480px;
 			z-index: 1; }
-		
-		
+
+
 		.tsr-txt {
 			background: #40A6CC;
 			padding: 40px 20px 0;
 			height: auto;
 			*height: 194px;
 			-moz-height: 154px;
-			width: auto;			
-			
+			width: auto;
+
 			UL {
 				list-style-image: url(/a/img/b-on-blue.gif);
-				padding: 0; }	
-			}		
-					
+				padding: 0; }
+			}
+
 		.tsr-comecon { background: url(/a/img/teasers/comecon.jpg) no-repeat;}
 		.tsr-birdview { background: url(/a/img/teasers/moscow-birdview.jpg) no-repeat;}
 		.tsr-ship { background: url(/a/img/teasers/ship.jpg) no-repeat;}
 		.tsr-skyscrapers { background: url(/a/img/teasers/skyscrapers.jpg) no-repeat;}
 		.tsr-slavyanskaya { background: url(/a/img/teasers/slavyanskaya.jpg) no-repeat;}
-		
+
 		}
-	
+
 	DIV.last {
 		margin-left: 1.02040816%;
 		*margin-left: .918367347%;
 		padding: 5px 20px 0;
 		width: 32.6530612%;
 		*width: 32.5510204%;
-		
+
 		.list-view { padding-top: 18px; }
-		
+
 		A { color: @c-txt; }
 		}
 
@@ -170,24 +169,24 @@
 
 
 /*	**************************************************
-	
+
 	PORTRAIT TABLETS: 768–979px
-	
+
 	**************************************************	*/
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-	
+
 	#btl .first LI A { font: bold 100% e('/') @baseline @font-sans !important; }
-	
+
 	#btl .alt { display: block; }
 	#slideshow { display: none; }
 }
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 
 @media only screen and (max-width: 767px) {
@@ -196,7 +195,7 @@
 	.box-sizing(border-box);
 	padding-right: 20px;
 	padding-left: 20px;
-	
+
 	.col {
 		margin: 0 0 @baseline-mob !important;
 		padding: 11px 20px @baseline-mob;
@@ -216,27 +215,27 @@
 	margin-bottom: @baseline-mob !important;
 	min-height: 0;
 	width: auto !important; }
-	
+
 	UL.first { margin: 0 20px @baseline-mob !important;
-	
+
 		A { font-size: @h2-font-size-mob !important; }
 	}
-		
+
 	DIV.last, .list-view { padding-top: 0; }
-	
+
 	A.second {
 		margin-left: 0 !important;
-	
+
 		H2, DIV  {
 			position: static !important;
 			max-width: none !important; }
-		
+
 		H2 {
 			background: #40A6CC none !important;
 			height: auto !important; }
 		.tsr-txt  { padding: 20px !important; }
 		}
-		
+
 		.alt { display: block; }
 	}
 

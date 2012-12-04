@@ -10,9 +10,9 @@
 	line-height: 16em/11;
 	margin-top: 20em/11;
 	width: @sidebar;
-	
+
 	.box { margin-top: 0; }
-	
+
 	HEADER H3 {
 		font-family: @font-sans;
 		font-weight: bold;
@@ -25,7 +25,7 @@ NAV.doc-sidebar {
 	.box UL { padding: 0 9px; }
 
 	.box HEADER { margin-bottom: 10em/11; }
-	
+
 	A {
 		.box-sizing(border-box);
 		color: @c-txt;
@@ -35,14 +35,14 @@ NAV.doc-sidebar {
 		position: relative;
 		width: 100%;
 		.pseudo-after();
-	
+
 		&:visited { color: @c-txt; }
-	
+
 		&.active, &:hover, &:focus {
 			color: @c-txt;
 			background: @c-sm-link-hover-bg !important;
 			text-decoration: none;
-	
+
 		&:after, .after { /* Bevelled angles */
 			content: '';
 			display: block;
@@ -61,15 +61,15 @@ NAV.doc-sidebar {
 
 ASIDE.doc-sidebar {
 	.box {
-		HEADER { 
+		HEADER {
 			#gradient > .vertical-three-colors(#40a6cc, #1980a6, 76%, #3399bf);
 			border-top: 1px solid #5fb4d4;
 			margin-bottom: 17em/11; /* Fine-tuning */ }
-		
+
 		H3 {
 			color: #FFF;
 			text-shadow: 0 1px 0 darken(#1980a6, 4%);
-			
+
 			&:after, .after { /* Bullet - See 09-boxes.css */
 				background: #4c96b7;
 				*background: darken(#4c96b7, 4%);
@@ -79,10 +79,10 @@ ASIDE.doc-sidebar {
 				.box-shadow(inset 0 1px 0 rgba(255,255,255,.12)); }
 			}
 	}
-	
-	
+
+
 		.open-space { padding: 0 20px;
-		
+
 			H3 {
 				color: #000;
 				font-family: @h2-font;
@@ -90,7 +90,7 @@ ASIDE.doc-sidebar {
 				line-height: 32em/21;
 				padding-top: 0;
 				padding-bottom: 0; }
-			
+
 			A:last-child:after {
 				.bg-img();
 				background-position: -400px 0;
@@ -105,13 +105,13 @@ ASIDE.doc-sidebar {
 	}
 
 /*	**************************************************
-	
+
 	PORTRAIT TABLETS: 768–979px
-	
+
 	**************************************************	*/
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-	
+
 	ASIDE.doc-sidebar { display: none; }
 	NAV.doc-sidebar {
 		float: right;
@@ -121,10 +121,10 @@ ASIDE.doc-sidebar {
 }
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 
 @media only screen and (max-width: 767px) {

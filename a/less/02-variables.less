@@ -1,165 +1,165 @@
 /*	==================================================
-		Typography
-		==================================================	*/
+	Typography
+	==================================================	*/
 
-@font-sans:  	      					Arial, Roboto, Helvetica, sans-serif;
-@font-mono:        						Monaco, 'Courier New', monospace;
-@font-serif:  		    				Georgia, 'Times New Roman', Times, serif;
+@font-sans:  	      			Arial, Roboto, Helvetica, sans-serif;
+@font-mono:        				Monaco, 'Courier New', monospace;
+@font-serif:  		    		Georgia, 'Times New Roman', Times, serif;
 
-@base-font-size:		    			81.3%; /* 13px */
-@base-font-size-mob:					100%; /* 16px */
-@b:														13; /* conversion rate to ems */
-@bm:													16;
+@base-font-size:		    	81.3%; /* 13px */
+@base-font-size-mob:			100%; /* 16px */
+@b:								13; /* conversion rate to ems */
+@bm:							16;
 
-@baseline:										1.54em; /* 20px */
-@baseline-mob:								1.25em; /* 20px */
+@baseline:						1.54em; /* 20px */
+@baseline-mob:					1.25em; /* 20px */
 
-@h1:													34;
-@h1-font-size:		        		261.5%; /* 34px */
-@h1-line-height:		    			1.17647059; /* 40px */
-@h1-font:											'FreeSet Bold', Tahoma, Geneva, sans-serif;
-@h1-font-weight:							normal;
-@h1-color:										@c-txt;
+@h1:							34;
+@h1-font-size:		        	261.5%; /* 34px */
+@h1-line-height:		    	1.17647059; /* 40px */
+@h1-font:						'FreeSet Bold', Tahoma, Geneva, sans-serif;
+@h1-font-weight:				normal;
+@h1-color:						@c-txt;
 
-@h1m:													24;					
-@h1-font-size-mob:		    		150%; /* 24px */
-@h1-line-height-mob:					1.25; /* 30px */
+@h1m:							24;
+@h1-font-size-mob:		    	150%; /* 24px */
+@h1-line-height-mob:			1.25; /* 30px */
 
-@h2:													21;
-@h2-font-size:		        		161.5%; /* 21px */
-@h2-line-height:		    			.952; /* 20px */
-@h2-font:											@h1-font;
-@h2-font-weight:							normal;
-@h2-color:										@c-txt;
+@h2:							21;
+@h2-font-size:		        	161.5%; /* 21px */
+@h2-line-height:		    	.952; /* 20px */
+@h2-font:						@h1-font;
+@h2-font-weight:				normal;
+@h2-color:						@c-txt;
 
-@h2m:													20;
-@h2-font-size-mob:		   			125%; /* 20px */
-@h2-line-height-mob:					1; /* 20px */
-
-/*	==================================================
-		Layout
-		==================================================	*/
-@max-width:										980px;
-@col-padding:									0 20px;
-@footer-height:								240px;
-@sidebar:											165px;
-@gutter:											35px;
+@h2m:							20;
+@h2-font-size-mob:		   		125%; /* 20px */
+@h2-line-height-mob:			1; /* 20px */
 
 /*	==================================================
-		Color scheme
-		==================================================	*/
+	Layout
+	==================================================	*/
+@max-width:						980px;
+@col-padding:					0 20px;
+@footer-height:					240px;
+@sidebar:						165px;
+@gutter:						35px;
 
-@c-txt:	             					#4c4c4c; /* Body text color */
+/*	==================================================
+	Color scheme
+	==================================================	*/
 
-@bg:													#FFFFFA; /* Background */
-@bg-body:											@bg;
+@c-txt:	             			#000; /* Body text color */
+
+@bg:							#FFFFFA; /* Background */
+@bg-body:						@bg;
 
 /*	Background based colors */
-@c-input:											#FFF;
-@c-tr:												#F7F7F2; /* even table rows, boxes etc */
-@c-th: 	           						#F0F0EB; /* theads — darker then on @bg-dkr-1 3–4% */
-@c-brd:												#E7E7E2; /* lines, borders, hrs */
-@c-nt:												#909090; /* notes, time, .byline etc */
+@c-input:						#FFF;
+@c-tr:							#F7F7F2; /* even table rows, boxes etc */
+@c-th: 	           				#F0F0EB; /* theads — darker then on @bg-dkr-1 3–4% */
+@c-brd:							#E7E7E2; /* lines, borders, hrs */
+@c-nt:							#909090; /* notes, time, .byline etc */
 
-@c-link:                			#0d7399;
+@c-link:                		#268cb2;
 @c-link-hover:             		darken(@c-link, 16%);
 @c-link-visited:            	#8C008C;
-@green:                 			#268C26;
-@red:                   			#B22626;
+@green:                 		#268C26;
+@red:                   		#B22626;
 
-@c-selection:									@c-link;
+@c-selection:					@c-link;
 
-@c-clear-close:								#ABAEB2;
+@c-clear-close:					#ABAEB2;
 
-@brd:													1px solid @c-brd; /* Main border */
-@brd-sec:											1px solid #B1B1AC;
+@brd:							1px solid @c-brd; /* Main border */
+@brd-sec:						1px solid #B1B1AC;
 
 /*	==================================================
-		Buttons
-		==================================================	*/
+	Buttons
+	==================================================	*/
 
-@c-btn-light:									#40a6cc;
-@c-btn-dark:           				#1980a6;
+@c-btn-light:					#40a6cc;
+@c-btn-dark:           			#1980a6;
 
-@c-btn-mob-header-light:			#a6cce5;
-@c-btn-mob-header-dark:				#80a6bf;
+@c-btn-mob-header-light:		#a6cce5;
+@c-btn-mob-header-dark:			#80a6bf;
 
-/*	@c-btn-info-light: 
+/*	@c-btn-info-light:
 	@c-btn-info:
 	@c-btn-info-dark:
-	@c-btn-success: 
+	@c-btn-success:
 	@c-btn-warning: */
 
 
 /*	==================================================
-		Main menu (mm), drop-downs/submenus (sm) and slide-out (so)
-		==================================================	*/
+	Main menu (mm), drop-downs/submenus (sm) and slide-out (so)
+	==================================================	*/
 
-@c-mm-link:										lighten(@c-txt, 24%);
-@c-sm-link:										lighten(@c-txt, 24%);
-@c-sm-link-hover:							@c-txt;
-@c-so-link:										#FFFFFF;
-@c-so-link-hover:							#FFFFFF;
+@c-mm-link:						#454c4e;
+@c-sm-link:						#454c4e;
+@c-sm-link-hover:				@c-txt;
+@c-so-link:						#FFFFFF;
+@c-so-link-hover:				#FFFFFF;
 
-@c-sm-bg:											#F8EEE9;
-@c-sm-brd:										@c-brd;
-@c-sm-link-hover-bg:					#FCF7F2;
-@c-sm-link-hover-light:				#FCF7F2;
-@c-sm-link-hover-dark:				#FCF7F2;
+@c-sm-bg:						#F8EEE9;
+@c-sm-brd:						@c-brd;
+@c-sm-link-hover-bg:			#FCF7F2;
+@c-sm-link-hover-light:			#FCF7F2;
+@c-sm-link-hover-dark:			#FCF7F2;
 
-@c-so-bg:											#4E5053;
-@c-so-brd-t:	            		0 1px 0 rgba(255,255,255,.2);
-@c-so-brd-b:	            		1px solid #33363A;
-@c-so-link-hover-light:				#5B5E62;
-@c-so-link-hover-dark:				#33363A;
-@c-so-link-hover-darkest:			#15181C;
-@so-width:										240px;
+@c-so-bg:						#4E5053;
+@c-so-brd-t:	            	0 1px 0 rgba(255,255,255,.2);
+@c-so-brd-b:	            	1px solid #33363A;
+@c-so-link-hover-light:			#5B5E62;
+@c-so-link-hover-dark:			#33363A;
+@c-so-link-hover-darkest:		#15181C;
+@so-width:						240px;
 
-
-/*	==================================================
-		Forms
-		==================================================	*/
-
-@i-bg:												#FFF;
-@i-placeholder:         			@c-nt;
-@brd-radius:									3px;
-@i-width:											140px;
 
 /*	==================================================
-		Sprite paths
-		==================================================	*/
+	Forms
+	==================================================	*/
 
-@base-graphics:								'/a/img/base-graphics.png';
-
-/*	==================================================
-		Component variables
-		==================================================	*/
-
-/*	==================================================
-		Z-index master list
-		==================================================	*/
-
-@z-dd:												400;
-@z-popover:           				440;
-@z-tooltip:           				480;
-@z-fixed-navbar:							520;
-@z-modal-backdrop:						560;
-@zindexModal:									600;
+@i-bg:							#FFF;
+@i-placeholder:         		@c-nt;
+@brd-radius:					3px;
+@i-width:						140px;
 
 /*	==================================================
-		Form states and alerts
-		==================================================	*/
+	Sprite paths
+	==================================================	*/
 
-@warning-txt:									#959581;
-@warning-bg:									#FFFFE1;
-@warning-brd:         				lighten(@red, 50%);
+@base-graphics:					'/a/img/base-graphics.png';
 
-@error-txt:              		 	#FFF;
-@error-bg:         						lighten(@red, 80%);
-@error-brd:         					@red;
+/*	==================================================
+	Component variables
+	==================================================	*/
 
-@success-txt:									@green;
-@success-bg:         					lighten(@green, 80%);
-@success-brd:									lighten(@green, 60%);
+/*	==================================================
+	Z-index master list
+	==================================================	*/
+
+@z-dd:							400;
+@z-popover:           			440;
+@z-tooltip:           			480;
+@z-fixed-navbar:				520;
+@z-modal-backdrop:				560;
+@zindexModal:					600;
+
+/*	==================================================
+	Form states and alerts
+	==================================================	*/
+
+@warning-txt:					#959581;
+@warning-bg:					#FFFFE1;
+@warning-brd:         			lighten(@red, 50%);
+
+@error-txt:              		#FFF;
+@error-bg:         				lighten(@red, 80%);
+@error-brd:         			@red;
+
+@success-txt:					@green;
+@success-bg:         			lighten(@green, 80%);
+@success-brd:					lighten(@green, 60%);
 
 /*@info */

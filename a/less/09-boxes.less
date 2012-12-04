@@ -1,16 +1,16 @@
 @import '02-variables.less';
 @import '02-mixins.less';
 
-ASIDE.left, ASIDE.right { 
+ASIDE.left, ASIDE.right {
 	.box-sizing(border-box);
 	width: 33.33%; /* 320 - 1/3 of body width */ }
-	
+
 		.doc-main ASIDE.left, .doc-main ASIDE.right { width: 44.44%; }
 
 	ASIDE.left {
 		margin: -11px 20px 10px 0;
 		margin: -1.1rem 20px 1rem 0; }
-	
+
 	ASIDE.right {
 		margin: -11px 0 10px 20px;
 		margin: -1.1rem 0 1rem 20px; }
@@ -20,11 +20,11 @@ BLOCKQUOTE {
 	background: @c-tr;
 	margin: @baseline 0; /* 24px 0 */
 	padding: @baseline 20px; /* 24px 20px */
-	
+
 	P { padding: 0}
-	
+
 	.byline { .pseudo-before(); }
-	
+
 	.byline:before { content: '\2014 \00A0'; }
 	}
 
@@ -39,28 +39,28 @@ BLOCKQUOTE {
 	position: relative;
 	.pseudo-after();
 
-	HEADER { 
-		#gradient > .vertical-three-colors(#FCF7F4, #F3E4E1, 76%, #F7EBE8);
-		border-top: 1px solid #FEFDFC;
+	HEADER {
+		#gradient > .vertical-three-colors(#d9eaef, #c7d8dd, 76%, #cddee3);
+		border-top: 1px solid #eaf3f6;
 		margin-bottom: @baseline;
 		padding: 25px 19px 0;
 		min-height: 23px;
 		*height: 23px;
-		
+
 		H3 {
 			color: @c-mm-link;
 			font-size: 76.9%; /* 10px */
 			font-weight: bold;
-			text-shadow: 0 1px 0 rgba(255,255,255,1);
+			text-shadow: 0 1px 0 rgba(255,255,255,.64);
 			text-transform: uppercase;
 			padding-right: 5px;
 			position: relative;
 			.pseudo-after();
-			
+
 			&:after, .after { /* Bullet */
-				background: #f7ece9;
-				*background: darken(#f7ece9, 8%);
-				background: darken(#f7ece9, 8%)~'\0/';
+				background: #d5e6eb;
+				*background: darken(#d5e6eb, 8%);
+				background: darken(#d5e6eb, 8%)~'\0/';
 				border: 1px solid rgba(0,0,0,.08);
 				.box-shadow(inset 0 1px 0 rgba(255,255,255,.4));
 				content: '';
@@ -73,11 +73,11 @@ BLOCKQUOTE {
 				width: 9px; }
 			 }
 		}
-	
+
 	DL, OL, P, UL { padding-right: 19px; }
-	
+
 	DL, P { padding-left: 19px; }
-	
+
 	&:after, .after { /* Angled border */
 		.bg-img();
 		background-position: -430px 0;
@@ -88,12 +88,12 @@ BLOCKQUOTE {
 		bottom: -1px;
 		right: -1px;
 		height: 12px;
-		width: 12px; }	
+		width: 12px; }
 }
 
 .jumped {
 	margin-bottom: @baseline;
-	
+
 	> P:last-child:after, > UL LI:last-child:after { /* Right arrow */
 		content: '';
 		.inline-block();
@@ -105,9 +105,9 @@ BLOCKQUOTE {
 	}
 
 .tsr {
-	#gradient > .vertical-three-colors(#a6cce5, #80a6bf, 76%, #99bfd9);
-	filter: ~'progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#FFa6cce5, EndColorStr=#FF80a6bf, GradientType=0)'; /*	Filter in three-colors mixin don't work in  */
-	color: #194059;
+	#gradient > .vertical-three-colors(#e0f7fd, #cae0ed, 76%, #d9effd);
+	filter: ~'progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#e0f7fd, EndColorStr=#cae0ed, GradientType=0)'; /*	Filter in three-colors mixin don't work in  */
+	color: @c-txt;
 	text-shadow:  0 1px 0 rgba(255,255,255,.44);
 	margin-top: @baseline/2;
 	margin-bottom: @baseline;
@@ -115,19 +115,19 @@ BLOCKQUOTE {
 	padding-bottom: @baseline;
 	min-height: @baseline * 5.5;
 	*height:  @baseline * 5.5;
-	
+
 	A {
 		color: #194059;
-			
+
 		&:hover {
 			color: darken(#194059, 12%);
 			text-decoration: none;
-			
+
 			P:last-child:after, UL LI:last-child:after { /* Right arrow */
-				border-left-color: rgba(255,255,255,.88); }
+				border-left-color: darken(@c-link, 8%); }
 			}
 	 	}
-	
+
 	&:after, .after { /* Angled border */
 		content: '';
 		display: block;
@@ -140,22 +140,22 @@ BLOCKQUOTE {
 		right: 0;
 		bottom: 0;
 		width: 0; }
-		
+
 	P:last-child:after, UL LI:last-child:after { /* Right arrow */
 		content: '';
 		.inline-block();
 		margin: 0 0 -1em/@b .44em;
 		border-top: 5px solid transparent;
-		border-left: 4px solid rgba(255,255,255,.44);
+		border-left: 4px solid @c-link;
 		border-bottom: 5px solid transparent;
 		width: 0; }
 	}
 
 .coverline {
 	/*
-	Small teaser - graphic element or headline. Set in 2-columns smartphone layout. 
+	Small teaser - graphic element or headline. Set in 2-columns smartphone layout.
 	*/ }
-	
+
 /*	==================================================	*/
 
 DIV:focus { outline: none; }
@@ -169,10 +169,10 @@ IFRAME {
 	max-width: 100%; }
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 @media only screen and (max-width: 767px) {
 
@@ -196,23 +196,23 @@ BLOCKQUOTE {
 
 }
 /*	**************************************************
-	
+
 	PORTRAIT PHONES
-	
+
 	**************************************************	*/
 @media only screen and (max-width: 479px) {
-	
+
 .box {
 	border-right: 0;
 	border-left: 0;
 	.border-radius(0);
-	
+
 	HEADER { .border-radius(0); }
-	
+
 	DL, OL, P, UL { padding-right: 20px; }
-	
+
 	DL, P { padding-left: 20px; }
-	
+
 	}
 
 .jumped > P, .jumped > UL LI, .tsr P, .tsr UL LI {
@@ -227,5 +227,5 @@ BLOCKQUOTE {
 	padding-bottom: @baseline-mob;
 	min-height: none !important;
 	height: auto !important; }
-  
+
 }

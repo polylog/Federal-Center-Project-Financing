@@ -8,40 +8,40 @@
 	color: @c-txt;
 	cursor: default;
 	white-space: nowrap;
-	
+
 	&:hover {
 		color: @c-txt;
 		text-decoration: none; }
-	
+
 	I {
 		color: @c-nt;
 		font-style: normal; }
 	}
 
 /*	**************************************************
-	
+
 	PORTRAIT TABLETS: 768–979px
-	
+
 	**************************************************	*/
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-	
+
 .tbl, .tbl-pc { display: inherit !important; }
 .mob { display: none !important; }
 
 .tel {
-	color: @c-link;
+	color: @c-link !important;
 	cursor: pointer;
-	
+
 	I { color: lighten(@c-link, 20%); }
 	}
 }
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 
 @media only screen and (max-width: 767px) {
@@ -52,7 +52,7 @@
 .tel {
 	color: @c-link;
 	cursor: pointer;
-	
+
 	I { color: lighten(@c-link, 20%); }
 	}
 }

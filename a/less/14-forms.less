@@ -44,12 +44,12 @@ LABEL {
 	display: block;
 	margin-top: @baseline;
 	margin-bottom: 5em/@b; /* TODO - adjast */
-	
+
 	B {
 		display: inline; /*	Show labels text on big screens */
 		font-weight: normal; }
 	}
-	
+
 	LABEL.first, LABEL:first-child { margin-top: 0 ; }
 
 /*	We have to use few rules, because browsers ignore a rule with an unknown selector. */
@@ -80,7 +80,7 @@ INPUT, TEXTAREA {
 	.box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
 	outline: none;
 	.transition(~'border linear .2s, box-shadow linear .2s');
-	
+
 	 /* Focus state */
   	&:focus {
 		border-color: darken(@c-brd, 24%);
@@ -180,13 +180,13 @@ LEGEND + .group {
 	.group {
 		margin-bottom: @baseline;
 		.clearfix();
-		
+
 		DIV {
 			*display: inline-block;
 			margin-left: @i-width + 20;
 			*margin-left: 0;
 			*padding-left: 20px;
-			
+
 			&:first-child {	*padding-left: @i-width + 20; }
 			}
 		}
@@ -212,15 +212,15 @@ INPUT, TEXTAREA, SELECT, .help
 /*, .i-uneditable, .i-append, .i-prepend */ {
 	.inline-block();
 	margin-bottom: 0; }
-  
+
 	/* Re-hide hidden elements */
 	.hide { display: none; }
 }
-	
+
 .f-inline .cbx, .f-inline .rb {
 	margin-bottom: 0;
 	vertical-align: middle; }
-	
+
 /*	.f-inline .cbx INPUT[type="checkbox"], .f-inline .rb INPUT[type="radio"] - die6 */
 .f-inline .cbx INPUT, .f-inline .rb INPUT  {
 	float: left;
@@ -271,20 +271,20 @@ INPUT, TEXTAREA, SELECT, .help
 
 .i-search {
 	background: @c-input;
-	border: 1px solid #E8D1C8;
-	.box-shadow(inset 0 1px 4px rgba(24,1,1,.12), 0 1px 0 #F7EBE9);
+	border: 1px solid #b9d0d9;
+	.box-shadow(inset 0 1px 4px rgba(24,1,1,.12), 0 1px 0 #d4e1e6);
 	.box-sizing(border-box);
 	display: block;
 	font-family: inherit;
 	margin: 0;
-	padding: 8px 7px;
+	padding: 6px 7px 7px;
 	outline: none;
 	vertical-align: middle;
 	width: 100%; }
 
 .i-search:-moz-placeholder { /* Placeholder isn't supported in Firefox 3.6 */
 	color: @c-nt;
-	font-size: 10px;
+	font-size: 11px;
 	text-transform: uppercase;
 	padding-top: 4px; }
 .i-search:focus:-moz-placeholder {
@@ -293,7 +293,7 @@ INPUT, TEXTAREA, SELECT, .help
 
 .i-search:-ms-input-placeholder {
 	color: @c-nt;
-	font-size: 10px;
+	font-size: 11px;
 	text-transform: uppercase;
 	padding-top: 4px; }
 .i-search:focus:-ms-input-placeholder {
@@ -302,7 +302,7 @@ INPUT, TEXTAREA, SELECT, .help
 
 .i-search::-webkit-input-placeholder {
 	color: @c-nt;
-	font-size: 10px;
+	font-size: 11px;
 	text-transform: uppercase;
 	padding-top: 4px; }
 
@@ -358,21 +358,21 @@ INPUT[type="hidden"] { display: none; }
 /*	.error .i-append .add-on, .error .i-prepend .add-on, */
 .error > LABEL, .error SELECT, .error TEXTAREA   {
 	color: @error-txt; }
-	
+
 .error INPUT, /*	.warning .i-append .add-on, .warning .i-prepend .add-on, */ .error SELECT, .error TEXTAREA {
 	background: @error-bg;
 	border-color: @error-brd; }
-	
+
 .error INPUT:focus, .error SELECT:focus, .error TEXTAREA:focus {
 	border-color: lighten(@error-brd, 20%); }
-	
+
 /*	HTML5 invalid states. Shares styles with the .warning */
 INPUT:invalid, TEXTAREA:invalid { background: @warning-bg; }
 
 INPUT:focus:required:invalid, SELECT:focus:required:invalid, TEXTAREA:focus:required:invalid {
 	border-color: @warning-brd;
 	color: @warning-txt;
-	
+
 	&:focus { border-color: lighten(@warning-brd, 20%); }
 }
 
@@ -380,7 +380,7 @@ INPUT:focus:required:invalid, SELECT:focus:required:invalid, TEXTAREA:focus:requ
 /*	==================================================
 	Help
 	==================================================	*/
-	
+
 /*.help-block, */ .help {
 	color: @c-nt;
 	.inline-block();
@@ -406,14 +406,14 @@ TEXTAREA.span7, TEXTAREA.span8, TEXTAREA.span9, TEXTAREA.span10, TEXTAREA.span11
 	margin-left: 0; }
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 
 @media only screen and (max-width: 767px) {
-	
+
 FORM { padding: 0 20px; }
 
 LEGEND { margin-bottom: @baseline-mob; }
@@ -431,7 +431,7 @@ LEGEND { margin-bottom: @baseline-mob; }
 LABEL {
 	display: none; /* Hide label text marked as bold and use placeholder attribute instead. */
 	display: inline \9;
-	
+
 	B { display: inline; }
 	}
 
@@ -507,9 +507,9 @@ LEGEND + .group {
 .f-inline .i-prepend, .f .i-prepend */ {
 	display: block;
 	margin-bottom: initial; }
-	
+
 .f-inline .cbx, .f-inline .rb { margin-bottom: initial; }
-	
+
 /*	.f-inline .cbx INPUT[type="checkbox"], .f-inline .rb INPUT[type="radio"] - die6 */
 .f-inline .cbx INPUT, .f-inline .rb INPUT  {
 	float: none;
@@ -529,9 +529,9 @@ LEGEND + .group {
 }
 
 /*	**************************************************
-	
+
 	PORTRAIT PHONES
-	
+
 	**************************************************	*/
 @media only screen and (max-width: 479px) {
 

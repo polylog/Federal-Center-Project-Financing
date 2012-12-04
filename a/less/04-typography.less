@@ -12,7 +12,7 @@
          url('/a/type/fs.svg#FreesetNormal') format('svg'); /* Legacy iOS */
     font-weight: normal;
     font-style: normal; }
-	
+
 @font-face {
     font-family: 'Freeset Bold';
     src: url('/a/type/fsb.eot');  /* IE9 Compat Modes */
@@ -66,21 +66,21 @@ BODY { font-size: @base-font-size; }
 H1, H2, H3, H4 {
 	margin: 0;
 	text-rendering: optimizelegibility;
-	
+
 	SMALL { font-weight: normal; }
 	}
 
 H1 {
 	color: @h1-color;
-	font: @h1-font-weight @h1-font-size @h1-font; 
+	font: @h1-font-weight @h1-font-size @h1-font;
 	line-height: @h1-line-height; /* Shortcut rule causes bugs in old IEs */
 	padding-top: 31em/@h1;
 	padding-bottom: 15em/@h1; }
-	
+
 	SECTION.doc-main > H1 { text-align: center; }
-	
+
 	H1 + P:not([class]), HGROUP + P:not([class]), .doc-main > HEADER + P:not([class]), P.lead { font-weight: bold; }
-	
+
 	H1.mini { margin-top: @baseline/@h2; }
 
 	H1.mini {
@@ -129,15 +129,15 @@ SMALL {	font-size: 81.3%; }
 	background: @c-selection;
 	color: #FFF;
 	text-shadow: none; }
-	
+
 .nowrap { white-space: nowrap; }
 
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 
 @media only screen and (max-width: 767px) {
@@ -162,9 +162,9 @@ H2 {
 	padding-bottom: 2em/@h2m; /* 2px */ }
 
 HGROUP, .doc-main > HEADER, P { margin: 0 0 @baseline-mob; }
-	
+
 	HGROUP H2 { margin-top: -2px; }
 
 HR { margin: (7/4 * @baseline-mob - 1/@bm) 0 (9/4 * @baseline-mob - 1/@bm); }  /* 4 (16/4) empty lines */
-	
+
 }

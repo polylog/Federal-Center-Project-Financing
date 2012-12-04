@@ -6,7 +6,7 @@ ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, NAV, SECTIO
 
 /*	Display block in IE6-9 and FF3 */
 AUDIO, CANVAS, VIDEO {
-	display: inline-block; 
+	display: inline-block;
 	*display: inline;
 	*zoom: 1; }
 
@@ -28,8 +28,11 @@ HTML {
 	-ms-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased; }
 
-HTML, BODY { height: 100%; }
-
+HTML, BODY {
+	/* WARNING. Don't use height: 100% for modern browsers.
+	It causes bugs with fixed position in mobile versions */
+	min-height: 100%;
+	*height: 100%; }
 
 /*	==================================================
 	Typography
@@ -83,7 +86,7 @@ BUTTON, INPUT, SELECT, TEXTAREA { font-size: 100%; }
 BUTTON, .btn, INPUT {
 	line-height: normal; /*	FF3/4 have !important on line-height in UA stylesheet */
 	*overflow: visible; } /*	Inner spacing ie IE6/7 */
-	
+
 	TABLE INPUT { *overflow: auto; }
 
 BUTTON::-moz-focus-inner, INPUT::-moz-focus-inner { /* Inner padding and border oddities in FF3/4 */
@@ -95,7 +98,7 @@ BUTTON::-moz-focus-inner, INPUT::-moz-focus-inner { /* Inner padding and border 
 	-webkit-appearance: none
 	to prevent webkit buttons styling */
 BUTTON, .btn { cursor: pointer; }
-  
+
 INPUT[type="search"], .i-search {
 	-webkit-appearance: textfield;
 	-moz-box-sizing: content-box;
