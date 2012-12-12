@@ -36,38 +36,38 @@ OL.unstyled, UL.unstyled {
 	list-style: none;
 	list-style-image: none;
 	padding: 0;
-	
+
 	LI {
 		border-right: @brd;
 		.inline-block();
 		padding: 0 10px 0 5px; }
-	
+
 	LI.last {
 		border-right: 0;
 		padding-right: 0; }
-	 
+
 	 }
-	 
+
 .list-view, .search-res {
 	list-style: none;
 	list-style-image: none;
 	padding: 0;
-	
+
 	LI { margin-bottom: @baseline; }
-	
+
 	TIME:before { content: '\2014 \00A0'; }
-	 
+
 	 }
 
 .m-local {
 	border-bottom: @brd;
 	padding: 0 0 (@baseline - 1em/@b);
-	
+
 	LI {
 		border-left: @brd;
 		display: inline;
 		padding: 0 .3em 0 .6em; }
-	
+
 	LI:first-child, .first {
 		border-left: 0 none;
 		padding-left: 0; }
@@ -82,10 +82,10 @@ HEADER .m-local {
 	right: 0; }
 
 /*	**************************************************
-	
+
 	!! BL SHIFT !!
 	PHONES & SMALL PORTRAIT TABLETS
-	
+
 	**************************************************	*/
 @media only screen and (max-width: 767px) {
 
@@ -97,8 +97,12 @@ DL, OL, UL {
 
 OL { padding-left: 40px; }
 
+.list-view {
+	padding-left: 0 !important;
+	padding-right: 0 !important; }
+
 .list-view, .m-local, .search-res {
-	
+
 	H3, P {
 		padding-left: 0;
 		padding-right: 0; }
